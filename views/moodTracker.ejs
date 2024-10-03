@@ -1,0 +1,65 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+<div class="mood-tracker-page">
+    <!-- Header -->
+    <header class="header">
+        <h1>How Are You Feeling Today?</h1>
+    </header>
+
+    <!-- Mood Check-In Form -->
+    <section class="mood-checkin">
+        <h2>Check-In Your Mood</h2>
+        <div class="mood-emojis">
+            <button class="mood-btn happy" title="Happy">😊</button>
+            <button class="mood-btn sad" title="Sad">😢</button>
+            <button class="mood-btn anxious" title="Anxious">😟</button>
+            <button class="mood-btn calm" title="Calm">😌</button>
+            <!-- Add more mood buttons as needed -->
+        </div>
+        <label for="intensity-slider">Mood Intensity:</label>
+        <input type="range" id="intensity-slider" min="1" max="10">
+
+        <textarea placeholder="Tell us more about how you're feeling..." class="mood-text-box"></textarea>
+        <button class="btn-submit">Submit Mood</button>
+    </section>
+
+    <!-- Mood History Graph (Placeholder for actual graph integration) -->
+    <section class="mood-history">
+        <h2>Your Mood History</h2>
+        <div class="mood-graph">
+            <!-- Placeholder for graph (e.g., using Chart.js) -->
+            <canvas id="moodChart"></canvas>
+        </div>
+    </section>
+
+    <!-- Insights & Reminders -->
+    <section class="insights-reminders">
+        <div class="insights">
+            <h3>Insights</h3>
+            <p>You've felt "Calm" for 3 days this week!</p>
+            <p>"Anxious" more on Mondays.</p>
+        </div>
+        <div class="reminders">
+            <h3>Reminders</h3>
+            <p>Remember to log your mood daily!</p>
+            <p>"Every feeling matters!"</p>
+        </div>
+    </section>
+
+    <!-- Past Entries Journal -->
+    <section class="past-entries">
+        <h2>Past Mood Entries</h2>
+        <div class="calendar-view">
+            <!-- Placeholder for Calendar -->
+            <p>Calendar view will be here.</p>
+        </div>
+        <div class="entry-list">
+            <div class="entry-card">
+                <p><strong>Date:</strong> 2024-09-28</p>
+                <p><strong>Mood:</strong> Happy 😊</p>
+                <p><strong>Note:</strong> Had a great day with friends!</p>
+            </div>
+            <!-- More entry cards as needed -->
+        </div>
+    </section>
+</div>

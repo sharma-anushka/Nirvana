@@ -1,0 +1,158 @@
+.home-header{
+    text-align: center;
+}
+
+.test{
+    height: 20rem;
+    background-color: green;
+}
+
+.functions{
+    display: flex;
+    justify-content: space-evenly !important; 
+}
+
+.getStarted{
+    margin-left: 45%;
+    height: 6rem;
+    width: 12rem;
+}
+
+
+/* General Page Styling */
+.mood-tracker-page {
+    background: linear-gradient(to bottom, #6CC5A9, #D5C4E0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    color: #333;
+}
+
+/* Header Styling */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #FFF8ED;
+    font-size: 2.5rem;
+}
+
+/* Mood Check-In Form Styling */
+.mood-checkin {
+    background: #FFF8ED;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mood-emojis {
+    margin: 20px 0;
+}
+
+.mood-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 0 10px;
+}
+
+.mood-btn:hover {
+    transform: scale(1.2);
+}
+
+.mood-text-box {
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px solid #FFC5AB;
+    border-radius: 12px;
+    height: 80px;
+}
+
+.btn-submit {
+    margin-top: 20px;
+    background-color: #A52A2A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #8B4513;
+}
+
+/* Mood History Graph Styling */
+.mood-history {
+    background: #FFF8ED;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mood-graph {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Insights & Reminders Section */
+.insights-reminders {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.insights, .reminders {
+    background: #D5C4E0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    text-align: center;
+}
+
+.insights h3, .reminders h3 {
+    color: #6CC5A9;
+}
+
+/* Past Entries Journal Styling */
+.past-entries {
+    background: #FFF8ED;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-view {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.entry-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.entry-card {
+    background: #D5C4E0;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+}
+
+.entry-card p {
+    margin: 10px 0;
+}

@@ -7,21 +7,30 @@
     </header>
 
     <!-- Mood Check-In Form -->
-    <section class="mood-checkin">
-        <h2>Check-In Your Mood</h2>
-        <div class="mood-emojis">
-            <button class="mood-btn happy" title="Happy">😊</button>
-            <button class="mood-btn sad" title="Sad">😢</button>
-            <button class="mood-btn anxious" title="Anxious">😟</button>
-            <button class="mood-btn calm" title="Calm">😌</button>
-            <!-- Add more mood buttons as needed -->
-        </div>
-        <label for="intensity-slider">Mood Intensity:</label>
-        <input type="range" id="intensity-slider" min="1" max="10">
-
-        <textarea placeholder="Tell us more about how you're feeling..." class="mood-text-box"></textarea>
-        <button class="btn-submit">Submit Mood</button>
-    </section>
+    <form action="/moodTracker/<%= allMoods[0]._id%>" method="POST">
+        <section class="mood-checkin">
+            <h2>Check-In Your Mood</h2>
+            <div class="mood-emojis">
+                <button type="button" class="mood-btn happy" title="Happy" onclick="setMood('happy')">😊</button>
+                <button type="button" class="mood-btn sad" title="Sad" onclick="setMood('sad')">😢</button>
+                <button type="button" class="mood-btn anxious" title="Anxious" onclick="setMood('anxious')">😟</button>
+                <button type="button" class="mood-btn calm" title="Calm" onclick="setMood('calm')">😌</button>
+            </div>
+            <input type="hidden" id="mood" name="mood" required>
+            <div>
+                <label for="intensity-slider">Mood Intensity:</label>
+                <input type="range" id="intensity-slider" min="1" max="10" name="intensity">
+            </div>
+            <div>
+                <label for="date">Choose a Date to Log Your Mood</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <div>
+                <textarea placeholder="Tell us more about how you're feeling..." class="mood-text-box" name="note"></textarea>
+                <button class="btn-submit">Submit Mood</button>
+            </div>
+        </section>
+    </form>
 
     <!-- Mood History Graph (Placeholder for actual graph integration) -->
     <section class="mood-history">
@@ -45,21 +54,28 @@
             <p>"Every feeling matters!"</p>
         </div>
     </section>
-
-    <!-- Past Entries Journal -->
-    <section class="past-entries">
-        <h2>Past Mood Entries</h2>
-        <div class="calendar-view">
-            <!-- Placeholder for Calendar -->
-            <p>Calendar view will be here.</p>
-        </div>
-        <div class="entry-list">
-            <div class="entry-card">
-                <p><strong>Date:</strong> 2024-09-28</p>
-                <p><strong>Mood:</strong> Happy 😊</p>
-                <p><strong>Note:</strong> Had a great day with friends!</p>
-            </div>
-            <!-- More entry cards as needed -->
-        </div>
-    </section>
 </div>
+
+
+<script>
+    function setMood(mood) {
+        document.getElementById('mood').value = mood;
+
+    }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',  // Display month view
+            dateClick: function(info) {
+                // Redirect to a URL with the clicked date
+                var selectedDate = info.dateStr;  // Get the clicked date as a string (YYYY-MM-DD)
+                window.location.href = `/moodTracker/${selectedDate}`;  // Redirect to the desired route
+            }
+        });
+
+        calendar.render();  // Render the calendar
+    });
+</script>

@@ -1,0 +1,280 @@
+<% layout("layouts/boilerplate.ejs") %>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="bg-[#F2E5FF]">
+    <div class="bg-purple-100 flex items-center p-8 mb-8 w-full">
+        <div class="w-1/2 pr-4">
+            <h1 class="text-purple-900 text-4xl font-bold mb-4">Stress</h1>
+            <p class="text-purple-800 mb-6">
+                In small doses, stress can help you stay energized and focused. But when it's chronic or overwhelming, 
+                it can damage your health, productivity, and well-being. Learn the warning signs and what you can do to protect yourself.
+            </p>
+            <button id="view-faqs-button" class="text-purple-700 border border-purple-900 px-6 py-2 rounded-lg hover:bg-purple-700 hover:text-white transition-colors duration-200">
+                View FAQs
+            </button>
+        </div>
+        <div class="w-1/2">
+            <img src="https://www.cleanlink.com/resources/editorial/2023/29994-stress-sstock-1879789873.jpg" alt="Stress visual" class="rounded-lg w-full h-auto object-cover">
+        </div>
+    </div>
+    <!-- what is stress block -->
+    <div class="bg-purple-50 text-purple-900 p-8 w-full h-400px min-h-64">
+        <h2 class="text-2xl font-bold mb-2">What is Stress?</h2>
+        <p>Stress is the body's natural response to challenging or demanding situations. It can be triggered by external factors, such as work, relationships, or finances, or internal factors, such as health or personal expectations. Everyone experiences stress differently, and it can affect both mental and physical well-being.</p>
+    </div>
+
+    <!-- Reflecting -->
+    <div class="bg-purple-700 text-white p-8 shadow-md mb-0">
+        <h2 class="text-3xl font-bold mb-4">Reflect</h2>
+        <p class="mb-6 text-lg">Stress is a part of life, but it’s important to take the time to understand its root causes. Reflecting on stressful moments can help us cope better and find solutions. Consider these questions the next time you're feeling stressed:</p>
+
+        <!-- Question 1 -->
+        <div class="mb-4">
+            <div class="w-full text-left bg-purple-800 hover:bg-purple-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                <span class="font-semibold">What is truly causing my stress right now?</span>
+                <span class="faq-arrow text-2xl">▼</span>
+            </div>
+            <div class="hidden mt-2 text-purple-200">
+                <p>Take a moment to identify the specific situation, task, or person causing your stress. It could be something external like work deadlines or internal like fear of failure. Understanding the root cause helps you address it more effectively rather than dealing with just the symptoms.</p>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="mb-4">
+            <div class="w-full text-left bg-purple-800 hover:bg-purple-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                <span class="font-semibold">Is this something I can control, or do I need to adjust my expectations?</span>
+                <span class="faq-arrow text-2xl">▼</span>
+            </div>
+            <div class="hidden mt-2 text-purple-200">
+                <p>Stress often comes from feeling powerless over a situation. Ask yourself if this is within your control or if it's something you need to accept. If it’s out of your hands, adjusting your mindset or expectations might help you manage your stress more effectively.</p>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="mb-4">
+            <div class="w-full text-left bg-purple-800 hover:bg-purple-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                <span class="font-semibold">Have I felt this way before? How did I handle it back then?</span>
+                <span class="faq-arrow text-2xl">▼</span>
+            </div>
+            <div class="hidden mt-2 text-purple-200">
+                <p>Think about similar stressful situations you’ve experienced in the past. How did you navigate them? What worked and what didn’t? Reflecting on past experiences can provide valuable insights into coping strategies that might help again.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breathing exercise -->
+     <div class="bg-purple-50 flex items-center p-8 w-full shadow-md">
+        <div class="w-1/2 pr-4">
+            <h1 class="text-purple-900 text-4xl font-bold mb-4">Breathe</h1>
+            <p class="text-purple-700">Take a deep breath and let the stress melt away. Breathing exercises are your quick escape to calmness—just a few deep breaths can relax your mind, lower your heart rate, and bring you back to balance. Let your breath be your guide to finding peace in this moment.</p>
+        </div>
+        <div class="w-1/2 pl-4 text-center">
+            <img src="https://media.post.rvohealth.io/wp-content/uploads/sites/2/2015/09/GRT_13180-6_breathing-exercises-fb-1200x628.png" alt="Breathing Exercise" class="mb-4 mx-auto rounded-md shadow-lg">
+            <button id="try-breathing-button" class="text-purple-700 border border-purple-700 px-6 py-2 rounded-lg hover:bg-purple-700 hover:text-white transition-colors duration-200">
+                Try Breathing Exercise
+            </button>
+        </div>
+    
+        <!-- Breathing Exercise Card -->
+<div id="exerciseCard" class="hidden fixed inset-0 flex items-center justify-center z-50">
+    <div class="bg-blue-800 text-white rounded-lg p-6 shadow-lg relative w-1/2 max-w-md">
+        <h2 class="text-center text-2xl font-bold mb-4">Breathing Exercise</h2>
+        <div id="timer" class="text-center text-4xl mb-4">120</div>
+        <div id="instruction" class="text-center text-xl mb-4">Inhale</div>
+        
+        <div id="circle" class="w-32 h-32 rounded-full border-4 border-white flex items-center justify-center mx-auto mb-4">
+            <div id="animation-circle" class="w-20 h-20 bg-blue-600 rounded-full animate-breathe"></div>
+        </div>
+
+        <button id="closeExercise" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded">
+            Close
+        </button>
+    </div>
+</div>
+    </div>
+    
+
+    <!-- Stress-relieving yoga poses-->
+<div class="bg-purple-100 p-8">
+    <h1 class="text-purple-900 text-3xl font-bold text-center mb-6">Stress-Relieving Yoga Poses</h1>
+    <p class="text-purple-700 text-base text-center mb-8">Yoga is an excellent way to alleviate stress, combining physical movement with mindfulness and breathing techniques. Here are a few effective poses to help you relax and restore balance:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Pose 1: Child’s Pose -->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://backinshapeprogram.com/wp-content/uploads/2023/05/Back-Pain-and-Sciatica_-How-the-Childs-Pose-Stretch-Could-Be-Making-It-Worse-2-1024x576.png" alt="Child's Pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Child’s Pose</h2>
+            <p class="text-purple-700 text-sm text-center">This gentle pose promotes relaxation by calming the mind and relieving tension in the back, shoulders, and neck. Kneel on the floor, sit back on your heels, and stretch your arms forward.</p>
+        </div>
+
+        <!-- Pose 2: Cat-Cow Stretch -->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://yogajala.com/wp-content/uploads/2022/03/cat-cow-pose-page.jpg" alt="Cat-Cow Stretch" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Cat-Cow Stretch</h2>
+            <p class="text-purple-700 text-sm text-center">This dynamic stretch helps release tension in the spine and encourages mindful breathing. Start on all fours and alternate between arching your back (Cow Pose) and rounding your spine (Cat Pose).</p>
+        </div>
+
+        <!-- Pose 3: Standing Forward Bend -->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://cdn.yogajournal.com/wp-content/uploads/2021/11/Uttanasana-Pose_Andrew-Clark_2400x1350.jpeg" alt="Standing Forward Bend" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Standing Forward Bend</h2>
+            <p class="text-purple-700 text-sm text-center">This pose helps relieve tension in the neck, shoulders, and lower back while calming the mind. Stand tall, then hinge at your hips to fold forward, letting your head hang heavy.</p>
+        </div>
+
+        <!-- Pose 4: Legs-Up-The-Wall Pose -->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://cdn.yogajournal.com/wp-content/uploads/2021/12/Legs-Up-the-Wall-Pose_Andrew-Clark_2400x1350.jpeg" alt="Legs-Up-The-Wall Pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Legs-Up-The-Wall Pose</h2>
+            <p class="text-purple-700 text-sm text-center">This restorative pose helps reduce stress and anxiety. Lie on your back with your legs extended up against a wall, close your eyes, and breathe deeply.</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Relaxation videos & audios -->
+    <div class="bg-purple-200 text-purple-900 p-8 w-full shadow-md min-h-64">
+        <h2 class="text-2xl font-bold mb-2">Relaxation Videos & Audios</h2>
+        <p>Watch and listen to relaxation videos to manage stress:</p>
+        <ul class="list-disc pl-6">
+            <li><a href="https://www.youtube.com/watch?v=inpok4MKVLM" class="text-blue-700 underline" target="_blank">10-Minute Guided Meditation</a></li>
+            <li><a href="https://www.youtube.com/watch?v=8v45WSuAeYI" class="text-blue-700 underline" target="_blank">Relaxing Nature Sounds</a></li>
+        </ul>
+    </div>
+
+    <!-- Positive affirmations -->
+    <div class="bg-purple-300 text-purple-900 p-8 w-full shadow-md min-h-64">
+        <h2 class="text-2xl font-bold mb-2">Positive Affirmations</h2>
+        <p>Speak or think the following affirmations:</p>
+        <ul class="list-disc pl-6">
+            <li>I am strong enough to handle my stress.</li>
+            <li>This feeling is only temporary.</li>
+            <li>I am in control of my mind and my body.</li>
+        </ul>
+    </div>
+
+    <!-- FAQs Section -->
+    <div id="faqs" class="faq-section bg-purple-50 shadow-md p-6 w-full rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+
+        <!-- FAQ 1 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">What Are Common Signs of Stress?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Stress can manifest in various ways, including physical symptoms like headaches, muscle tension, fatigue, and trouble sleeping. Emotionally, it may cause irritability, mood swings, anxiety, or feeling overwhelmed, while cognitively it can lead to forgetfulness, negative thinking, and difficulty concentrating. Recognizing these signs early is key to managing stress before it becomes unmanageable.</p>
+            </div>
+        </div>
+
+        <!-- Add your other FAQs below in a similar format -->
+        <!-- FAQ 2 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">Is All Stress Bad for Me?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Not all stress is harmful—positive stress, called "eustress," can motivate you and improve performance, like when preparing for an exam or presentation. On the other hand, long-term stress, known as "distress," can negatively impact health if not managed properly, emphasizing the importance of balance and healthy coping mechanisms.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">What Is the Difference Between Anxiety and Stress?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Stress is a response to specific challenges, such as work or personal conflicts, and usually diminishes once the stressor is resolved. Anxiety, however, is more persistent and doesn't always have an identifiable cause. Unlike stress, which can sometimes motivate you, anxiety tends to have a negative impact on daily life and often requires treatment to manage.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200 " onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">When Should I Seek Professional Help for Stress?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Seeking professional help is important if stress persists without improvement, significantly affects your daily life, or causes severe physical symptoms like chronic headaches. Additionally, if stress results in anxiety, depression, or leads you to use unhealthy coping mechanisms like alcohol, it’s time to reach out to a mental health professional for support.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Function to toggle FAQ visibility
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    answer.classList.toggle('hidden'); // Toggle visibility
+    const arrow = element.querySelector('.faq-arrow');
+    arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; // Change arrow direction
+}
+
+// Start breathing exercise
+document.getElementById('try-breathing-button').addEventListener('click', function() {
+    const exerciseCard = document.getElementById('exerciseCard');
+    exerciseCard.classList.remove('hidden');
+
+    let timeLeft = 120; // Total duration of the exercise in seconds
+    const timerDisplay = document.getElementById('timer');
+    const instruction = document.getElementById('instruction');
+    const breathingDuration = 4; // Seconds for inhale/exhale
+    let inhale = true;
+
+    timerDisplay.textContent = timeLeft;
+
+    // Update breathing every second
+    const countdown = setInterval(function() {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft % 8 === 0) { // Every 8 seconds (4s inhale + 4s exhale)
+            instruction.textContent = inhale ? "Inhale" : "Exhale";
+            inhale = !inhale; // Toggle inhale/exhale
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            instruction.textContent = "Great job! You're done!";
+            document.getElementById('animation-circle').classList.add('hidden'); // Optionally hide circle at the end
+        }
+    }, 1000);
+});
+
+// Close breathing exercise
+document.getElementById('closeExercise').addEventListener('click', function() {
+    document.getElementById('exerciseCard').classList.add('hidden');
+    clearInterval(countdown); // Clear the interval when closing
+});
+
+// Event listener for the FAQs button
+document.getElementById('view-faqs-button').addEventListener('click', function() {
+    const faqsSection = document.getElementById('faqs'); // Get the FAQs section
+    
+    // Scroll to the FAQs section smoothly
+    faqsSection.scrollIntoView({ behavior: 'smooth' });
+});
+// for horizontal scroll
+const carousel = document.getElementById('carousel');
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+
+let scrollAmount = 0;
+
+rightButton.addEventListener('click', () => {
+    scrollAmount += carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+leftButton.addEventListener('click', () => {
+    scrollAmount -= carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+</script>

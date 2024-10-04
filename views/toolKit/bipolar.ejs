@@ -1,0 +1,256 @@
+<% layout("layouts/boilerplate.ejs") %>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="bg-gray-100">
+    <div class="overflow-x-hidden">
+        <!-- Introductory Section -->
+        <div class="bg-blue-100 flex items-center p-8 w-full">
+            <div class="w-1/2 pr-4">
+                <h1 class="text-gray-800 text-4xl font-bold mb-4">Bipolar Disorder</h1>
+                <p class="text-gray-700 mb-6 text-xl">
+                    Bipolar disorder is a mental health condition characterized by extreme mood swings that include emotional highs (mania or hypomania) and lows (depression). Managing these symptoms is crucial for maintaining a balanced life.
+                </p>
+                <button id="view-faqs-button" class="text-blue-700 border border-blue-700 px-6 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition-colors duration-200">
+                    View FAQs
+                </button>
+            </div>
+            <div class="w-1/2">
+                <img src="https://media.istockphoto.com/id/1294477039/vector/metaphor-bipolar-disorder-mind-mental-double-face-split-personality-concept-mood-disorder-2.jpg?s=612x612&w=0&k=20&c=JtBxyFapXIA63hzZk_F5WNDF92J8fD2gIFNX3Ta4U3A=" alt="Bipolar Disorder visual" class="rounded-lg w-full h-auto object-cover">
+            </div>
+        </div>
+
+        <!-- What is Bipolar Disorder Block -->
+        <div class="bg-blue-50 text-gray-800 p-8 w-full min-h-64">
+            <h2 class="text-2xl font-bold mb-2">What is Bipolar Disorder?</h2>
+            <p class="text-xl pt-2">Bipolar disorder involves periods of mood swings ranging from depressive lows to manic highs. Individuals may experience significant changes in energy, activity, sleep, and behavior.</p>
+        </div>
+
+        <!-- Reflecting Section -->
+        <div class="bg-blue-900 text-white p-8 shadow-md mb-0">
+            <h2 class="text-3xl font-bold mb-4">Reflect</h2>
+            <p class="mb-6 text-lg">Understanding your emotions and reactions is key to managing bipolar disorder. Recognizing the signs early can lead to better coping strategies.</p>
+
+            <!-- Reflective Questions -->
+            <div class="mb-4 p-3">
+                <div class="w-full text-left bg-blue-800 hover:bg-blue-700 p-4 rounded-lg flex justify-between items-center cursor-pointer" 
+                     onclick="toggleFAQ(this)" 
+                     role="button" 
+                     aria-expanded="false">
+                    <span class="font-semibold">Recognize your mood shifts</span>
+                    <span class="faq-arrow text-2xl">▼</span>
+                </div>
+                <div class="hidden mt-2 text-gray-200 p-3">
+                    <p>Understanding the patterns of your mood changes can help you manage symptoms more effectively. Keeping a mood journal can be beneficial.</p>
+                </div>
+            </div>
+            
+            <div class="mb-4 p-3">
+                <div class="w-full text-left bg-blue-800 hover:bg-blue-700 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                    <span class="font-semibold">Reach out for support</span>
+                    <span class="faq-arrow text-2xl">▼</span>
+                </div>
+                <div class="hidden mt-2 text-gray-200 p-3">
+                    <p>Talk to friends, family, or a mental health professional. You don’t have to face bipolar disorder alone; support is available.</p>
+                </div>
+            </div>
+
+            <div class="mb-4 p-3">
+                <div class="w-full text-left bg-blue-800 hover:bg-blue-700 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                    <span class="font-semibold">Prioritize self-care</span>
+                    <span class="faq-arrow text-2xl">▼</span>
+                </div>
+                <div class="hidden mt-2 text-gray-200 p-3">
+                    <p>Establishing a routine, maintaining a healthy diet, and engaging in regular physical activity can positively affect your mood.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mindfulness Techniques Section -->
+<div class="bg-blue-50 flex items-center p-8 w-full shadow-md">
+    <div class="w-1/2 pr-4">
+        <h1 class="text-gray-800 text-4xl font-bold mb-4">Mindfulness Techniques</h1>
+        <p class="text-gray-700">Mindfulness has the potential to complement traditional treatments for bipolar disorder. These practices are not meant to replace your current treatment but can provide new avenues for managing symptoms. Here are some mindfulness techniques you might consider adding to your mental well-being routine.</p>
+    </div>
+    <div class="w-1/2 pl-4 text-center">
+        <img src="https://images.healthshots.com/healthshots/en/uploads/2023/07/13154636/positive-mindset-770x436.jpg" alt="Coping Techniques" class="mb-4 mx-auto rounded-md shadow-lg">
+        <!-- Button to YouTube Link -->
+        <a href="https://www.youtube.com/watch?v=LmNpOngLTqo" target="_blank">
+            <button id="try-coping-button" class="text-blue-700 border border-blue-700 px-6 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition-colors duration-200">
+                Learn Mindful Technique
+            </button>
+        </a>
+    </div>
+</div>
+
+        <!-- Coping Strategies Section -->
+<div class="p-8 bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200">
+    <h2 class="text-3xl font-bold text-center mb-6 text-gray-800 drop-shadow-lg">Coping Strategies</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg hover:bg-blue-100 transition-all duration-300 ease-in-out">
+            <h3 class="font-semibold text-lg text-gray-800">Stick to a routine</h3>
+            <p>The bipolar brain thrives with routine: consistency in waking time, eating habits, work schedule, and sleep hygiene. When your brain knows what it is doing next, it’s not as stressed out, which leaves more room to figure out problems and handle other frustrations.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg hover:bg-blue-100 transition-all duration-300 ease-in-out">
+            <h3 class="font-semibold text-lg text-gray-800">Get consistent sleep</h3>
+            <p>Sleep is the most effective thing you can do to prevent mania and keep your bipolar in check. Multiple studies have demonstrated the relationship between sleep deprivation and the risk of mania and hypomania. However, people with depression and bipolar often feel best at night so they want to stay up and compose their masterpiece or write their bestselling novel. The trick is going to bed when the rush of creativity comes, to practice good sleep hygiene when you don’t want to.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg hover:bg-blue-100 transition-all duration-300 ease-in-out">
+            <h3 class="font-semibold text-lg text-gray-800">Sweat</h3>
+            <p>Back in 400 B.C., Hippocrates wrote, “Eating alone will not keep a man well. He must also exercise.” In the past, scientists have focused on the benefits of exercise for the heart, muscles, lungs, and bones. New research is focusing on how it improves the brain: less depression, better memory, and quicker learning. Studies indicate that exercise may be an effective strategy to deal with the depressive phase of bipolar disorder.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg hover:bg-blue-100 transition-all duration-300 ease-in-out">
+            <h3 class="font-semibold text-lg text-gray-800">Eat a healthy diet</h3>
+            <p>There is an undeniable link between food and mood. For optimal mood, eat plenty of fresh fruits, vegetables, and whole grains and limit your fat and sugar intake. Space your meals out through the day, so your blood sugar never dips too low. High-carbohydrate diets can cause mood crashes, so they should also be avoided. Other mood-damaging foods include chocolate, caffeine, and processed foods.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg hover:bg-blue-100 transition-all duration-300 ease-in-out">
+            <h3 class="font-semibold text-lg text-gray-800">Laugh</h3>
+            <p>Charlie Chaplin once said, “To truly laugh, you must be able to take your pain and play with it.” I suppose that’s why talented comedians like Stephen Colbert, Art Buchwald, Robin Williams, and Ben Stiller have journeyed through periods of torment. There is an unspoken message hidden within a giggle that says this: “I promise, you’ll get through this.” Research suggests laughter therapy can reverse the stress response, alter dopamine and serotonin levels, and facilitate healing.</p>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg hover:bg-blue-100 transition-all duration-300 ease-in-out">
+            <h3 class="font-semibold text-lg text-gray-800">Avoid alcohol and drugs</h3>
+            <p>Drugs such as cocaine, ecstasy, and amphetamines can trigger mania, while alcohol and tranquilizers can trigger depression. Even moderate social drinking can upset your emotional balance. Substance use also interferes with sleep and may cause dangerous interactions with your medications. Attempts to self-medicate or numb your symptoms with drugs and alcohol only create more problems.</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- FAQs Section -->
+    <div id="faqs" class="faq-section bg-gray-50 shadow-md p-6 w-full rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+
+        <!-- FAQ 1 -->
+        <div class="faq-item mb-4 border-b border-gray-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-gray-800">What are the symptoms of bipolar disorder?</h3>
+                <span class="faq-arrow text-gray-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Symptoms of bipolar disorder can be categorized into manic and depressive episodes. During manic episodes, individuals may experience heightened energy, euphoria, irritability, decreased need for sleep, rapid speech, racing thoughts, and impulsive behavior. Conversely, depressive episodes can involve feelings of sadness, hopelessness, loss of interest in activities, fatigue, difficulty concentrating, changes in appetite, and thoughts of self-harm or suicide. Recognizing these symptoms is crucial for timely intervention and treatment.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item mb-4 border-b border-gray-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-gray-800">Can bipolar disorder be managed effectively?</h3>
+                <span class="faq-arrow text-gray-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Yes, bipolar disorder can be managed effectively with appropriate treatment and support. Many individuals with bipolar disorder lead fulfilling lives by adhering to their treatment plans, attending therapy, and building supportive relationships. It is essential for individuals to work closely with their healthcare providers to monitor their symptoms, adjust treatment as needed, and develop a strong support network. Education about the disorder and proactive self-care strategies can also empower individuals in their management journey.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item mb-4 border-b border-gray-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-gray-800">What should I do if I or someone I know is experiencing a crisis related to bipolar disorder?</h3>
+                <span class="faq-arrow text-gray-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>In the event of a crisis, it is crucial to seek immediate help. If someone is in danger of harming themselves or others, call emergency services or take them to the nearest hospital. It's also helpful to reach out to a mental health professional or a crisis hotline for support and guidance. Creating a safety plan with the individual can be beneficial in managing crises and ensuring that they have access to the necessary resources when needed.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item mb-4 border-b border-gray-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-gray-800">How is bipolar disorder diagnosed?</h3>
+                <span class="faq-arrow text-gray-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Diagnosis of bipolar disorder typically involves a comprehensive evaluation by a mental health professional. This may include a physical examination, a thorough psychiatric history, and interviews with family members to understand the individual's mood patterns and behaviors. Mental health professionals may also use standardized assessment tools to determine the presence of symptoms and the severity of the disorder. A proper diagnosis is essential for effective treatment planning.</p>
+            </div>
+        </div>
+        <!-- Additional Resources Section -->
+        <div class="bg-blue-50 text-gray-800 p-8 w-full r-0 left-0">
+            <h2 class="text-2xl font-bold mb-4">Additional Resources</h2>
+            <ul class="list-disc list-inside">
+                <li><a href="https://www.nami.org/Home" class="text-blue-600 hover:underline">NAMI (National Alliance on Mental Illness)</a> - Offers support and education on mental health.</li>
+                <li><a href="https://www.bphope.com/" class="text-blue-600 hover:underline">BPHope</a> - A magazine and website dedicated to helping people with bipolar disorder.</li>
+                <li><a href="https://www.psychiatry.org/patients-families/bipolar-disorder" class="text-blue-600 hover:underline">American Psychiatric Association</a> - Comprehensive information on bipolar disorder.</li>
+                <li><a href="https://www.bipolarcaregivers.org/" class="text-blue-600 hover:underline">Bipolar Caregivers</a> - A resource for caregivers of individuals with bipolar disorder.</li>
+                <li><a href="https://www.mhanational.org/" class="text-blue-600 hover:underline">Mental Health America</a> - Offers resources, screening tools, and information about mental health.</li>
+                <li><a href="https://www.therapist.com/" class="text-blue-600 hover:underline">Therapist.com</a> - Find a therapist who specializes in bipolar disorder.</li>
+            </ul>
+            <p class="mt-4">Remember, seeking help and utilizing available resources can significantly improve the management of bipolar disorder. You are not alone in this journey.</p>
+        </div>
+    </div>
+    <!-- extra -->
+</div>
+</div>
+<script>
+    // Function to toggle FAQ visibility
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    answer.classList.toggle('hidden'); // Toggle visibility
+    const arrow = element.querySelector('.faq-arrow');
+    arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; // Change arrow direction
+}
+
+// Start breathing exercise
+document.getElementById('try-breathing-button').addEventListener('click', function() {
+    const exerciseCard = document.getElementById('exerciseCard');
+    exerciseCard.classList.remove('hidden');
+
+    let timeLeft = 120; // Total duration of the exercise in seconds
+    const timerDisplay = document.getElementById('timer');
+    const instruction = document.getElementById('instruction');
+    const breathingDuration = 4; // Seconds for inhale/exhale
+    let inhale = true;
+
+    timerDisplay.textContent = timeLeft;
+
+    // Update breathing every second
+    const countdown = setInterval(function() {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft % 8 === 0) { // Every 8 seconds (4s inhale + 4s exhale)
+            instruction.textContent = inhale ? "Inhale" : "Exhale";
+            inhale = !inhale; // Toggle inhale/exhale
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            instruction.textContent = "Great job! You're done!";
+            document.getElementById('animation-circle').classList.add('hidden'); // Optionally hide circle at the end
+        }
+    }, 1000);
+});
+
+// Close breathing exercise
+document.getElementById('closeExercise').addEventListener('click', function() {
+    document.getElementById('exerciseCard').classList.add('hidden');
+    clearInterval(countdown); // Clear the interval when closing
+});
+
+// Event listener for the FAQs button
+document.getElementById('view-faqs-button').addEventListener('click', function() {
+    const faqsSection = document.getElementById('faqs'); // Get the FAQs section
+    
+    // Scroll to the FAQs section smoothly
+    faqsSection.scrollIntoView({ behavior: 'smooth' });
+});
+// for horizontal scroll
+const carousel = document.getElementById('carousel');
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+
+let scrollAmount = 0;
+
+rightButton.addEventListener('click', () => {
+    scrollAmount += carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+leftButton.addEventListener('click', () => {
+    scrollAmount -= carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+</script>

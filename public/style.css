@@ -1,8 +1,7 @@
 /* Custom Navbar Styling */
 .custom-navbar {
-    background-color: #FFF8ED /* Light beige background */
+    background-color: #FFF8ED; /* Light beige background */
     padding: 15px 30px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
 }
 
 /* Brand Name Styling */
@@ -38,10 +37,50 @@
     font-weight: 600; /* Same boldness as other links */
 }
 
+/* Toggler Button Styling for Small Screens */
+.navbar-toggler {
+    border: none; /* Remove default border */
+    background-color: transparent; /* Transparent background */
+    cursor: pointer; /* Change cursor on hover */
+}
+
 /* Custom Toggler Icon Styling */
-.custom-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%232e8b57' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E"); /* Custom green toggler icon */
-    filter: invert(28%) sepia(64%) saturate(474%) hue-rotate(100deg) brightness(92%) contrast(96%);
+.navbar-toggler-icon {
+    width: 30px; /* Width of the toggle icon */
+    height: 24px; /* Height of the toggle icon */
+    background-color: transparent; /* Transparent background for the icon */
+    position: relative; /* Position for absolute elements */
+}
+
+.navbar-toggler-icon:before,
+.navbar-toggler-icon:after,
+.navbar-toggler-icon div {
+    content: '';
+    display: block; /* Make lines visible */
+    height: 4px; /* Thickness of the lines */
+    width: 100%; /* Full width */
+    background-color: #412e8b; /* Color of the lines */
+    position: absolute; /* Position for overlapping */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.navbar-toggler-icon:before {
+    top: 0; /* Position first line at the top */
+}
+
+.navbar-toggler-icon div {
+    top: 10px; /* Position second line in the middle */
+}
+
+.navbar-toggler-icon:after {
+    bottom: 0; /* Position third line at the bottom */
+}
+
+/* Change color on hover */
+.navbar-toggler:hover .navbar-toggler-icon:before,
+.navbar-toggler:hover .navbar-toggler-icon:after,
+.navbar-toggler:hover .navbar-toggler-icon div {
+    background-color: #3cb371; /* Change color on hover */
 }
 
 /* Responsive Adjustments */
@@ -50,16 +89,36 @@
         background-color: #FFF8ED; /* Match beige background for mobile menu */
         padding: 10px;
         border-radius: 8px;
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: center; /* Center align nav links */
+        width: 100%; /* Full width on mobile */
     }
-    .nav-link {
-        margin-right: 0;
+    .navbar-nav .nav-link {
+        margin: 5px 0; /* Adjust margin for vertical layout */
         padding: 10px 0;
         border-bottom: 1px solid #dcdcdc;
+        width: 100%; /* Full width links */
+        text-align: center; /* Center align text */
+    }
+    .navbar-brand {
+        margin-bottom: 10px; /* Space below brand on mobile */
+        display: block; /* Make brand block for better layout */
+        text-align: center; /* Center align brand */
     }
     .nav-link:last-child {
         border-bottom: none;
     }
 }
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.5rem; /* Slightly smaller brand size for smaller devices */
+    }
+    .navbar-nav .nav-link {
+        font-size: 1rem; /* Smaller link size for better readability */
+    }
+}
+
 /* Logo Styling */
 .logo {
     height: 50px; /* Adjust the height according to your logo */
@@ -69,7 +128,7 @@
 
 /* navbar styling ends */
 
-/* home page */
+/* Home Page */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif; /* Default font for body */
@@ -118,7 +177,75 @@ body {
     padding-top: 20px;
 }
 
-/* nirvana tak */
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .home-header {
+        font-size: 2rem; /* Reduce header size on medium screens */
+    }
+
+    .sub-header {
+        font-size: 1.25rem; /* Reduce sub-header size */
+    }
+
+    .website-name {
+        font-size: 4rem; /* Reduce website name size */
+    }
+
+    .image-container img {
+        max-width: 70%; /* Adjust image width */
+    }
+
+    .first-section {
+        padding: 40px 15px; /* Adjust padding for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .home-header {
+        font-size: 1.8rem; /* Further reduce header size */
+    }
+
+    .sub-header {
+        font-size: 1rem; /* Further reduce sub-header size */
+    }
+
+    .website-name {
+        font-size: 3rem; /* Further reduce website name size */
+    }
+
+    .image-container img {
+        max-width: 90%; /* Make image larger on smaller screens */
+    }
+
+    .first-section {
+        padding: 30px 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .home-header {
+        font-size: 1.5rem; /* Reduce header size for extra small screens */
+    }
+
+    .sub-header {
+        font-size: 0.9rem; /* Reduce sub-header size */
+    }
+
+    .website-name {
+        font-size: 2.5rem; /* Reduce website name size */
+    }
+
+    .image-container img {
+        max-width: 100%; /* Full width for images on extra small screens */
+    }
+
+    .first-section {
+        padding: 20px 5px; /* Minimum padding for very small screens */
+    }
+}
+
+/* Home page styling ends */
+
 .home-header{
     text-align: center;
 }
@@ -281,12 +408,11 @@ body {
     margin: 10px 0;
 }
 
-/* mission styling */
+/* Mission Styling */
 .mission-container {
     width: 100%; /* Full width of the screen */
     padding: 40px 20px; /* Padding around the content */
     background-color: #E7CCCC; /* Light background for visibility */
-    /* border-radius: 12px; */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     text-align: center; /* Center text for the container */
     position: relative; /* To allow for absolute positioning of child elements if needed */
@@ -315,7 +441,52 @@ body {
     max-width: 800px; /* Limit width for better readability */
 }
 
-/* mission styling ends */
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .mission-title {
+        font-size: 2rem; /* Reduce title size on medium screens */
+    }
+
+    .mission-description {
+        font-size: 1.1rem; /* Slightly reduce description font size */
+    }
+
+    .mission-container {
+        padding: 30px 15px; /* Adjust padding for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .mission-title {
+        font-size: 1.8rem; /* Further reduce title size on smaller screens */
+    }
+
+    .mission-description {
+        font-size: 1rem; /* Further reduce description font size */
+        padding: 0 10px; /* Less horizontal padding */
+    }
+
+    .mission-container {
+        padding: 20px 10px; /* Further adjust padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .mission-title {
+        font-size: 1.5rem; /* Reduce title size for extra small screens */
+    }
+
+    .mission-description {
+        font-size: 0.9rem; /* Reduce description font size for extra small screens */
+    }
+
+    .mission-container {
+        padding: 15px 5px; /* Minimum padding for very small screens */
+    }
+}
+
+/* Mission styling ends */
+
 
 /* Footer Styling */
 footer {
@@ -339,7 +510,20 @@ footer {
 
 .col-sm-3 {
     flex: 1 1 22%; /* Flex basis for columns (4 columns) */
-    margin: 10px; /* Spacing around columns */
+    margin: 5px; /* Reduce spacing around columns */
+}
+
+/* Adjust columns for smaller screens */
+@media (max-width: 992px) {
+    .col-sm-3 {
+        flex: 1 1 45%; /* Two columns on medium-sized screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .col-sm-3 {
+        flex: 1 1 100%; /* Single column on small screens */
+    }
 }
 
 h6 {
@@ -378,6 +562,7 @@ ul li a:hover {
     font-size: 0.9rem; /* Smaller font size */
 }
 
+/* Social icons styling */
 .f-info-socials i {
     color: #3cb371; /* Social icon color */
     margin-right: 15px; /* Space between icons */
@@ -388,6 +573,21 @@ ul li a:hover {
 .f-info-socials i:hover {
     color: #66cdaa; /* Lighter shade of green on hover */
 }
+
+/* Responsive adjustments for footer info */
+@media (max-width: 576px) {
+    .f-info {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .f-info-brand {
+        margin-bottom: 10px; /* Space below brand info */
+    }
+}
+
+/* footer ends */
+
 
 /* explore section */
 .explore-section {
@@ -469,7 +669,7 @@ ul li a:hover {
     outline: none; /* Remove default outline */
     box-shadow: 0 0 5px rgba(75, 0, 130, 0.5); /* Subtle shadow for focus effect */
 }
-
+/* explore ends */
 
 .journal-page {
     width: 80%;

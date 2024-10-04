@@ -1,0 +1,332 @@
+<% layout("layouts/boilerplate.ejs") %>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div>
+    <div class="overflow-x-hidden">
+    
+        <!-- Introductory Section -->
+        <div class="bg-blue-100 flex items-center p-8 w-full">
+            <div class="w-1/2 pr-4">
+                <h1 class="text-gray-800 text-4xl font-bold mb-4">Post-Traumatic Stress Disorder (PTSD)</h1>
+                <p class="text-gray-700 mb-6">
+                    PTSD is a condition triggered by experiencing or witnessing a traumatic event. Symptoms can include flashbacks, nightmares, severe anxiety, and uncontrollable thoughts about the event. While these are normal reactions, when they persist, they can interfere with daily life.</p>
+                <button id="view-faqs-button" class="text-blue-700 border border-blue-700 px-6 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition-colors duration-200">
+                    View FAQs
+                </button>
+            </div>
+            <div class="w-1/2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToEsmTiZonOJNC6Ficm7kjLLsJlfTn2v6iq1U2fGhMzXJoMe5rCwTFdko-4-BuW_hR0-U&usqp=CAU" alt="Depression visual" class="rounded-lg w-full h-auto object-cover">
+            </div>
+        </div>
+    
+        <!-- What is ptsd Block -->
+        <div class="bg-blue-50 text-gray-800 p-8 w-full min-h-64">
+            <h2 class="text-2xl font-bold mb-2">What is PTSD?</h2>
+            <p>PTSD is a mental health condition caused by a terrifying event — either experiencing or witnessing it. Symptoms may include flashbacks, nightmares, and severe anxiety. People with PTSD may also feel emotionally numb and avoid places or situations that remind them of the trauma.</p>
+        </div>
+    
+        <!-- Reflecting Section -->
+        <div class="bg-gray-700 text-white p-8 shadow-md mb-0">
+            <h2 class="text-3xl font-bold mb-4">Reflect</h2>
+            <p class="mb-6 text-lg">You can't stop the waves but you can learn to surf; Emotions come and go in waves. It's best not to fight against them but ride with them.</p>
+    
+            <!-- Reflective Questions -->
+            <div class="mb-4 p-3">
+                <div class="w-full text-left bg-gray-800 hover:bg-gray-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" 
+                     onclick="toggleFAQ(this)" 
+                     role="button" 
+                     aria-expanded="false">
+                    <span class="font-semibold">Get to know your triggers</span>
+                    <span class="faq-arrow text-2xl">▼</span>
+                </div>
+                <div class="hidden mt-2 text-gray-200 p-3">
+                    <p class="p-3">You might find that certain experiences, situations, or people seem to trigger flashbacks or other symptoms. These might include specific reminders of past trauma, such as:</p>
+                    <ul class="list-disc list-inside pl-4">
+                        <li>Smells</li>
+                        <li>Sounds</li>
+                        <li>Words</li>
+                        <li>Places</li>
+                        <li>Particular types of books or films.</li>
+                    </ul>
+                    <p class="pt-3">Some people find things especially difficult on significant dates, such as the anniversary of a traumatic experience. It can help to plan ahead for these times and use these self-care tips to help you.</p>
+                </div>
+            </div>
+            
+    
+            <div class="mb-4 p-3">
+                <div class="w-full text-left bg-gray-800 hover:bg-gray-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                    <span class="font-semibold">Confide In Someone</span>
+                    <span class="faq-arrow text-2xl">▼</span>
+                </div>
+                <div class="hidden mt-2 text-gray-200 p-3">
+                    <p>When experiencing PTSD it can be hard to open up to others. This may be because you feel unable to talk about what has happened to you or because you find it difficult to trust others after your traumatic experience.</p>
+                    <p class="pt-2">You don't need to be able to describe the trauma to tell someone how you are currently feeling though. It could help to talk to a friend or family member, or a professional, such as a GP or a trained listener at a helpline.</p>
+                </div>
+            </div>
+    
+            <div class="mb-4 p-3">
+                <div class="w-full text-left bg-gray-800 hover:bg-gray-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                    <span class="font-semibold">Give yourself time</span>
+                    <span class="faq-arrow text-2xl">▼</span>
+                </div>
+                <div class="hidden mt-2 text-gray-200 p-3">
+                    <p>Everyone has their own unique response to trauma and it's important to take things at your own pace.</p>
+                    <p class="pt-3">For example, it may not be helpful to talk about your experiences before you feel ready. Try to be patient with yourself and don't judge yourself harshly for needing time and support to recover from PTSD.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Breathing Exercise Section -->
+        <div class="bg-blue-50 flex items-center p-8 w-full shadow-md">
+            <div class="w-1/2 pr-4">
+                <h1 class="text-gray-800 text-4xl font-bold mb-4">Breathe</h1>
+                <p class="text-gray-700">Breathing techniques are simple yet effective tools that can help manage anxiety and stress, particularly for individuals experiencing symptoms of PTSD. By focusing on our breath, we can ground ourselves in the present moment, reduce tension, and cultivate a sense of calm.</p>
+            </div>
+            <div class="w-1/2 pl-4 text-center">
+                <img src="https://medicaldialogues.in/h-upload/2021/09/13/1500x900_160337-untitled-design-1.webp" alt="Breathing Exercise" class="mb-4 mx-auto rounded-md shadow-lg">
+                <button id="try-breathing-button" class="text-blue-700 border border-blue-700 px-6 py-2 rounded-lg hover:bg-blue-700 hover:text-white transition-colors duration-200">
+                    Try Breathing Exercise
+                </button>
+            </div>
+    
+            <!-- Breathing Exercise Modal/Card -->
+            <div id="exerciseCard" class="hidden fixed inset-0 flex items-center justify-center z-50">
+                <div class="bg-blue-800 text-white rounded-lg p-6 shadow-lg relative w-1/2 max-w-md">
+                    <h2 class="text-center text-2xl font-bold mb-4">Breathing Exercise</h2>
+                    <div id="timer" class="text-center text-4xl mb-4">120</div>
+                    <div id="instruction" class="text-center text-xl mb-4">Inhale</div>
+                    
+                    <div id="circle" class="w-32 h-32 rounded-full border-4 border-white flex items-center justify-center mx-auto mb-4">
+                        <div id="animation-circle" class="w-20 h-20 bg-blue-600 rounded-full animate-breathe"></div>
+                    </div>
+    
+                    <button id="closeExercise" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- How can I help myself? -->
+        <div class="bg-pink-100 text-gray-800 p-8 w-full shadow-md min-h-64 relative overflow-hidden">
+            <h2 class="text-2xl font-bold mb-2">How can I help myself?</h2>
+            <p class="p-4">Flashbacks can be very distressing, but there are things you can do that might help. You could:</p>
+            <div class="w-full p-6 bg-pink-100 flex overflow-x-hidden" id="carousel">
+                <!-- First Rule Box -->
+                <div class="flex-1 bg-purple-500 text-white p-6 m-2 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out min-w-[30%]">
+                    <h2 class="text-xl font-semibold mb-3">Focus on your breathing.</h2>
+                    <p>When you are frightened, you might stop breathing normally. This increases feelings of fear and panic, so it can help to concentrate on breathing slowly in and out while counting to five.</p>
+                </div>
+        
+                <!-- Second Rule Box -->
+                <div class="flex-1 bg-[#a0e386] text-white p-6 m-2 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out min-w-[30%]">
+                    <h2 class="text-xl font-semibold mb-3">Carry an object that reminds you of the present.</h2>
+                    <p>Some people find it helpful to touch or look at a particular object during a flashback. This might be something you decide to carry in your pocket or bag, or something that you have with you anyway, such as a keyring or a piece of jewellery.</p>
+                </div>
+        
+                <!-- Third Rule Box -->
+                <div class="flex-1 bg-blue-700 text-white p-6 m-2 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out min-w-[30%]">
+                    <h2 class="text-xl font-semibold mb-3">Tell yourself that you are safe.</h2>
+                    <p>It may help to tell yourself that the trauma is over and you are safe now. It can be hard to think in this way during a flashback, so it could help to write down or record some useful phrases at a time when you're feeling better.</p>
+                </div>
+        
+                <!-- Fourth Rule Box -->
+                <div class="flex-1 bg-[#59c6c9] text-white p-6 m-2 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out min-w-[30%]">
+                    <h2 class="text-xl font-semibold mb-3">Comfort yourself.</h2>
+                    <p>For example, you could curl up in a blanket, cuddle a pet, listen to soothing music or watch a favourite film.</p>
+                </div>
+        
+                <!-- Fifth Rule Box -->
+                <div class="flex-1 bg-[#b183e6] text-white p-6 m-2 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out min-w-[30%]">
+                    <h2 class="text-xl font-semibold mb-3">Keep a diary.</h2>
+                    <p>Making a note of what happens when you have a flashback could help you spot patterns in what triggers these experiences for you. You might also learn to notice early signs that they are beginning to happen.</p>
+                </div>
+                <!-- Sixth Rule Box -->
+                <div class="flex-1 bg-[#87A2FF] text-white p-6 m-2 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out min-w-[30%]">
+                    <h2 class="text-xl font-semibold mb-3">Try grounding techniques.</h2>
+                    <p>Grounding techniques can keep you connected to the present and help you cope with flashbacks or intrusive thoughts. For example, you could describe your surroundings out loud or count objects of a particular type or colour.</p>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <button id="leftButton" class="absolute top-1/2 transform -translate-y-1/2 left-4 bg-purple-500 text-white p-2 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-200">
+                &#9664;
+            </button>
+            <button id="rightButton" class="absolute top-1/2 transform -translate-y-1/2 right-4 bg-purple-500 text-white p-2 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-200">
+                &#9654;
+            </button>
+        </div>
+    
+        <!-- Yoga Poses And Breathing Techniques for PTSD -->
+        <div class="bg-blue-100 p-8">
+            <h1 class="text-gray-800 text-3xl font-bold text-center mb-6 pb-6">Yoga Poses And Breathing Techniques for PTSD</h1>
+            <!-- <p class="text-gray-700 text-base text-center mb-8">Here are several yoga poses that can be particularly beneficial for reducing depression:</p> -->
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Pose 1: Child’s pose -->
+                <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    <img src="https://cdn.yogajournal.com/wp-content/uploads/2021/10/Childs-Pose_Andrew-Clark_1.jpg" alt="Child’s pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
+                    <h2 class="text-gray-800 text-xl font-semibold text-center mb-1">Child’s pose</h2>
+                    <p class="text-gray-700 text-sm text-center">This primary yoga pose is a great option anytime you need to de-stress, relax, and feel safe.</p>
+                </div>
+    
+                <!-- Pose 2: Chair Pose -->
+                <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8d4DdUAHfoDuNJ5OjrbJ5KWUnFs_kX7W2mQ&s" alt="Chair Pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
+                    <h2 class="text-gray-800 text-xl font-semibold text-center mb-1">Chair Pose</h2>
+                    <p class="text-gray-700 text-sm text-center">When experiencing overwhelming emotions, it can be helpful to practice a pose that grounds and strengthens your mind and body.</p>
+                </div>
+    
+                <!-- Pose 3: Alternate Nostril Breathing -->
+                <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQFHUC3PBUgkSkvELKVQv_4p0TnuV1uvEjIw&s" alt="Alternate Nostril Breathing" class="mb-2 mx-auto rounded-md h-32 object-cover">
+                    <h2 class="text-gray-800 text-xl font-semibold text-center mb-1">Alternate Nostril Breathing</h2>
+                    <p class="text-gray-700 text-sm text-center">This breathing technique can quickly calm the mind and body, and reduce anxiety and stress.</p>
+                </div>
+    
+                <!-- Pose 4: Humming Bee Breath -->
+                <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhAYCUaRYxzmZdMV3J9MipZC3fzdjKVZje107177TElvXESDA2co7iBOLJI4xflizFAnw&usqp=CAU" alt="Humming Bee Breath" class="mb-2 mx-auto rounded-md h-32 object-cover">
+                    <h2 class="text-gray-800 text-xl font-semibold text-center mb-1">Humming Bee Breath</h2>
+                    <p class="text-gray-700 text-sm text-center">Humming Bee Breath is effective at releasing built-up tension in the body.</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Relaxation Videos & Audios -->
+        <div class="bg-gray-200 text-gray-800 p-8 w-full shadow-md min-h-64">
+            <h2 class="text-2xl font-bold mb-2">Relaxation Videos & Audios</h2>
+            <p class="p-4">Engage with calming audio or visual resources to help soothe your mind and alleviate PTSD symptoms.</p>
+            <ul class="list-disc pl-6">
+                <li class="pb-3"><a href="https://www.youtube.com/watch?v=eiB-ibIwJN4" class="text-blue-700 underline" target="_blank">10-Minute Guided Meditation</a></li>
+                <li><a href="https://www.youtube.com/watch?v=y8jj12DnAys" class="text-blue-700 underline" target="_blank">Relaxing Nature Sounds</a></li>
+            </ul>
+        </div>
+    
+        
+        <!-- FAQs Section -->
+        <div id="faqs" class="faq-section bg-gray-50 shadow-md p-6 w-full rounded-lg">
+            <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+    
+            <!-- FAQ 1 -->
+            <div class="faq-item mb-4 border-b border-gray-300">
+                <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                    <h3 class="text-lg font-medium text-gray-800">Who is at risk for developing PTSD?</h3>
+                    <span class="faq-arrow text-gray-700">▼</span>
+                </div>
+                <div class="faq-answer hidden p-3">
+                    <p>While anyone can develop PTSD after experiencing a traumatic event, certain factors may increase the risk. These include the severity and duration of the trauma, personal history of mental health issues, a lack of social support, and a history of substance abuse. Additionally, individuals who have experienced previous traumas may be at greater risk for developing PTSD after subsequent traumatic events. It's also worth noting that some populations, such as military veterans, first responders, and survivors of violent crime, may face higher rates of PTSD due to the nature of their experiences.</p>
+                </div>
+            </div>
+    
+            <!-- FAQ 2 -->
+            <div class="faq-item mb-4 border-b border-gray-300">
+                <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                    <h3 class="text-lg font-medium text-gray-800">How is PTSD diagnosed?</h3>
+                    <span class="faq-arrow text-gray-700">▼</span>
+                </div>
+                <div class="faq-answer hidden p-3">
+                    <p>A diagnosis of PTSD is typically made by a mental health professional through a comprehensive evaluation. This process may include a clinical interview, a discussion of the individual's history and symptoms, and the use of standardized assessment tools. To be diagnosed with PTSD, the individual must meet specific criteria outlined in the Diagnostic and Statistical Manual of Mental Disorders (DSM-5). These criteria include experiencing a traumatic event, exhibiting certain symptoms for at least one month, and demonstrating significant distress or impairment in social, occupational, or other important areas of functioning. Early diagnosis and intervention are crucial for effective treatment.</p>
+                </div>
+            </div>
+    
+            <!-- FAQ 3 -->
+            <div class="faq-item mb-4 border-b border-gray-300">
+                <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                    <h3 class="text-lg font-medium text-gray-800">Can children develop PTSD?</h3>
+                    <span class="faq-arrow text-gray-700">▼</span>
+                </div>
+                <div class="faq-answer hidden p-3">
+                    <p>Yes, children can develop PTSD after experiencing or witnessing traumatic events. The symptoms in children may manifest differently than in adults, often showing through behavioral changes rather than verbal expressions of distress. Children may experience nightmares, exhibit clinginess, show regression in developmental milestones, or have difficulty concentrating. It is essential for caregivers and educators to recognize signs of distress in children and provide appropriate support. Early intervention through counseling or play therapy can be particularly effective in helping children process trauma and develop coping skills.</p>
+                </div>
+            </div>
+    
+            <!-- FAQ 4 -->
+            <div class="faq-item mb-4 border-b border-gray-300">
+                <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-gray-200" onclick="toggleFAQ(this)">
+                    <h3 class="text-lg font-medium text-gray-800">What should someone do if they think they have PTSD?</h3>
+                    <span class="faq-arrow text-gray-700">▼</span>
+                </div>
+                <div class="faq-answer hidden p-3">
+                    <p>If someone suspects they have PTSD, the first step is to seek professional help. This can involve reaching out to a mental health professional, such as a psychologist or psychiatrist, who specializes in trauma-related disorders. They can provide a thorough assessment and recommend appropriate treatment options. It's also helpful to connect with support groups or communities where individuals can share their experiences and coping strategies. Recognizing and acknowledging the symptoms is a significant step towards recovery, and seeking help is a sign of strength, not weakness.</p>
+                </div>
+            </div>
+        </div>
+        <!-- extra -->
+    </div>
+</div>
+<script>
+    // Function to toggle FAQ visibility
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    answer.classList.toggle('hidden'); // Toggle visibility
+    const arrow = element.querySelector('.faq-arrow');
+    arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; // Change arrow direction
+}
+
+// Start breathing exercise
+document.getElementById('try-breathing-button').addEventListener('click', function() {
+    const exerciseCard = document.getElementById('exerciseCard');
+    exerciseCard.classList.remove('hidden');
+
+    let timeLeft = 120; // Total duration of the exercise in seconds
+    const timerDisplay = document.getElementById('timer');
+    const instruction = document.getElementById('instruction');
+    const breathingDuration = 4; // Seconds for inhale/exhale
+    let inhale = true;
+
+    timerDisplay.textContent = timeLeft;
+
+    // Update breathing every second
+    const countdown = setInterval(function() {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft % 8 === 0) { // Every 8 seconds (4s inhale + 4s exhale)
+            instruction.textContent = inhale ? "Inhale" : "Exhale";
+            inhale = !inhale; // Toggle inhale/exhale
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            instruction.textContent = "Great job! You're done!";
+            document.getElementById('animation-circle').classList.add('hidden'); // Optionally hide circle at the end
+        }
+    }, 1000);
+});
+
+// Close breathing exercise
+document.getElementById('closeExercise').addEventListener('click', function() {
+    document.getElementById('exerciseCard').classList.add('hidden');
+    clearInterval(countdown); // Clear the interval when closing
+});
+
+// Event listener for the FAQs button
+document.getElementById('view-faqs-button').addEventListener('click', function() {
+    const faqsSection = document.getElementById('faqs'); // Get the FAQs section
+    
+    // Scroll to the FAQs section smoothly
+    faqsSection.scrollIntoView({ behavior: 'smooth' });
+});
+// for horizontal scroll
+const carousel = document.getElementById('carousel');
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+
+let scrollAmount = 0;
+
+rightButton.addEventListener('click', () => {
+    scrollAmount += carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+leftButton.addEventListener('click', () => {
+    scrollAmount -= carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+</script>

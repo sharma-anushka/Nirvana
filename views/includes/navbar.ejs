@@ -1,24 +1,32 @@
-<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary mb-3">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg custom-navbar mb-3">
+  <div class="container-fluid">
+      <!-- Logo on the Left -->
+      <a class="navbar-brand" href="#">
+          <img src="https://i.pinimg.com/564x/81/49/e2/8149e2871ab63d31da1345a2176e60c3.jpg" alt="MindfulSpace Logo" class="logo"> <!-- Update this path -->
+      </a>
+      <!-- Toggler for Mobile View -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon custom-toggler-icon"></span>
       </button>
+      <!-- Navigation Links Aligned to the Right -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
+          <ul class="navbar-nav ms-auto"> <!-- Use ms-auto to push nav items to the right -->
+              <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="/">Home</a> <!-- Removed 'active' class -->
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+              </li>
+          </ul>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
+
+

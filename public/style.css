@@ -1,3 +1,124 @@
+/* Custom Navbar Styling */
+.custom-navbar {
+    background-color: #FFF8ED /* Light beige background */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Brand Name Styling */
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #2e8b57; /* SeaGreen color for brand name */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #3cb371; /* MediumSeaGreen on hover */
+    text-decoration: none;
+}
+
+/* Navigation Links Styling */
+.navbar-nav .nav-link {
+    color: #2e8b57; /* SeaGreen color for nav links */
+    margin-right: 20px;
+    font-size: 1.1rem;
+    font-weight: 600; /* Same boldness for all links */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3cb371; /* MediumSeaGreen on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Remove Default Active Link Styling (Optional) */
+.navbar-nav .nav-link.active {
+    color: #2e8b57; /* Same color as other links */
+    font-weight: 600; /* Same boldness as other links */
+}
+
+/* Custom Toggler Icon Styling */
+.custom-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%232e8b57' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/ %3E%3C/svg%3E"); /* Custom green toggler icon */
+    filter: invert(28%) sepia(64%) saturate(474%) hue-rotate(100deg) brightness(92%) contrast(96%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .navbar-nav {
+        background-color: #FFF8ED; /* Match beige background for mobile menu */
+        padding: 10px;
+        border-radius: 8px;
+    }
+    .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid #dcdcdc;
+    }
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+}
+/* Logo Styling */
+.logo {
+    height: 50px; /* Adjust the height according to your logo */
+    margin-right: 10px; /* Space between logo and text */
+    display: inline-block; /* Ensures it aligns well with text if any */
+}
+
+/* navbar styling ends */
+
+/* home page */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Default font for body */
+}
+
+.first-section {
+    background-color: #FFF8ED; /* Beige background color */
+    text-align: center; /* Center align text */
+    padding: 50px 20px; /* Add padding for spacing */
+}
+
+.home-header {
+    font-family: 'Montserrat', sans-serif; /* Use a modern sans-serif font */
+    font-weight: bold; /* Make the text bold */
+    font-size: 2.5rem; /* Increase font size for headers */
+    color: #2e8b57; /* Set a soothing color */
+    margin: 20px 0; /* Space between titles */
+    letter-spacing: 1px; /* Add spacing between letters */
+    text-transform: uppercase; /* Make text uppercase for emphasis */
+}
+
+.sub-header {
+    font-size: 1.5rem; /* Adjust the size for the sub-header */
+    color: #6B8E23; /* A complementary green color */
+    font-weight: 300; /* Lighter font weight */
+    margin-top: 10px; /* Space above the subtitle */
+}
+
+.website-name {
+    font-size: 6rem; /* Increased font size significantly to look like the name of the website */
+    font-weight: bold; /* Make the website name bold */
+    margin: 20px 0; /* Space around the website name */
+    color: #2e8b57; /* Same color as headers */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}
+
+.image-container {
+    margin-top: 20px; /* Space above the image */
+}
+
+.image-container img {
+    max-width: 50%; /* Make sure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 30%; /* Add rounded corners to the image */
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+/* nirvana tak */
 .home-header{
     text-align: center;
 }
@@ -159,3 +280,184 @@
 .entry-card p {
     margin: 10px 0;
 }
+
+/* mission styling */
+.mission-container {
+    width: 100%; /* Full width of the screen */
+    padding: 40px 20px; /* Padding around the content */
+    background-color: #E7CCCC; /* Light background for visibility */
+    /* border-radius: 12px; */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text for the container */
+    position: relative; /* To allow for absolute positioning of child elements if needed */
+}
+
+.mission-title {
+    font-size: 2.5rem; /* Title size */
+    color: #2e8b57; /* Dark green color for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.mission-image {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.mission-description {
+    font-size: 1.2rem; 
+    color: #333;
+    line-height: 1.6; /* Increased line spacing for better readability */
+    padding: 0 20px; /* Horizontal padding for left and right */
+    margin: 0 auto; /* Center the paragraph */
+    max-width: 800px; /* Limit width for better readability */
+}
+
+/* mission styling ends */
+
+/* Footer Styling */
+footer {
+    background-color: #012f2c; /* Dark green background color for the footer */
+    padding: 40px 20px; /* Padding around the footer */
+    width: 100%; /* Full width of the screen */
+    position: relative; /* Ensure footer is at the bottom */
+}
+
+.big {
+    display: flex; /* Flexbox for the layout of the columns */
+    justify-content: space-between; /* Space between columns */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    max-width: 1200px; /* Optional: Set a max width */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.row {
+    width: 100%; /* Ensure the row takes full width */
+}
+
+.col-sm-3 {
+    flex: 1 1 22%; /* Flex basis for columns (4 columns) */
+    margin: 10px; /* Spacing around columns */
+}
+
+h6 {
+    color: #f0f0f0; /* Light color for headings to stand out against dark background */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+ul li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #f0f0f0; /* Light text color for links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+ul li a:hover {
+    color: #3cb371; /* Change link color on hover */
+}
+
+.f-info {
+    display: flex; /* Flexbox for footer info section */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center elements vertically */
+    margin-top: 20px; /* Space above the info section */
+}
+
+.f-info-brand {
+    color: #f0f0f0; /* Light color for brand info */
+    font-size: 0.9rem; /* Smaller font size */
+}
+
+.f-info-socials i {
+    color: #3cb371; /* Social icon color */
+    margin-right: 15px; /* Space between icons */
+    font-size: 1.5rem; /* Size of social icons */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.f-info-socials i:hover {
+    color: #66cdaa; /* Lighter shade of green on hover */
+}
+
+/* explore section */
+.explore-section {
+    background-color: #E5F0E6; /* Background color for the section */
+    padding: 20px; /* Padding around the explore section */
+    margin: 0px;
+}
+
+/* Heading Styles */
+.explore-section h1 {
+    font-weight: bold; /* Make the heading bolder */
+    margin-top: 20px; /* Add space above the heading */
+}
+
+/* Card styles remain the same */
+.card {
+    background-color: #f9f9f9; /* Light soothing background color for cards */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px; /* Padding inside the card */
+    margin: 10px; /* Space between cards */
+}
+
+.card img {
+    border-radius: 10px 10px 0 0; /* Rounded top corners for images */
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Elevate card on hover */
+    transform: scale(1.02); /* Slightly enlarge */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+/* Card title and text styles */
+.card-title {
+    font-size: 1.25rem; /* Increase font size for title */
+    color: #333; /* Dark text for readability */
+    margin: 10px 0; /* Space around the title */
+}
+
+.card-text {
+    color: #666; /* Softer text color for description */
+}
+
+/* Button Styles */
+.getStarted {
+    background-color: rgb(75, 0, 130); /* Indigo background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 10px; /* More rounded corners */
+    padding: 0px; /* Slightly increased padding for better size */
+    font-size: 1rem; /* Larger font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
+    margin-top: 20px; /* Add space above the button */
+}
+
+/* Button hover effect */
+.getStarted:hover {
+    background-color: rgb(60, 0, 120); /* Darker indigo on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Button focus styles (optional) */
+.getStarted:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(75, 0, 130, 0.5); /* Subtle shadow for focus effect */
+}
+
+
+
+

@@ -157,8 +157,25 @@ app.post("/journal",async (req,res) => {
 })
 
 
-app.get("/toolKit", (req,res) => {
-    res.render("toolKit.ejs");
+
+
+app.get("/toolKit/main", (req,res) => {
+    res.render("toolKit/main.ejs");
+})
+app.get("/toolKit/anxiety", (req, res) => {
+    res.render("toolKit/anxiety.ejs");
+})
+app.get("/toolKit/stress", (req, res) => {
+    res.render("toolKit/stress.ejs");
+})
+app.get("/toolKit/depression", (req, res) => {
+    res.render("toolKit/depression.ejs");
+})
+app.get("/toolKit/ptsd", (req, res) => {
+    res.render("toolKit/ptsd.ejs");
+})
+app.get("/toolKit/bipolar", (req, res) => {
+    res.render("toolKit/bipolar.ejs");
 })
 
 app.get("/emergency/main", (req,res) => {

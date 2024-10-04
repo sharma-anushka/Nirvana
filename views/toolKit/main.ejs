@@ -1,3 +1,4 @@
+
 <% layout("layouts/boilerplate.ejs") %>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <div class="bg-purple-100">
@@ -26,7 +27,7 @@
                 Anxiety can make you feel overwhelmed and restless. 
                 Here are ways to manage anxiety effectively.
             </p>
-            <button id="anxiety-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+            <a href="/toolKit/anxiety"><button id="anxiety-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button></a>
         </div>
 
         <div class="emotion-card bg-blue-200 p-4 shadow-md transition-transform transform hover:bg-blue-300 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('stress-card', 'stress-learn-more')">
@@ -34,7 +35,7 @@
             <p id="stress-card" class="emotion-description hidden text-center">
                 Stress can be a common experience for many, but managing it is crucial for your well-being.
             </p>
-            <button id="stress-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+            <a href="/toolKit/stress"><button id="stress-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button></a>
         </div>
 
         <div class="emotion-card bg-blue-300 p-4 shadow-md transition-transform transform hover:bg-blue-400 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('depression-card', 'depression-learn-more')">
@@ -42,7 +43,7 @@
             <p id="depression-card" class="emotion-description hidden text-center">
                 Depression can feel heavy and isolating. There are effective strategies to cope.
             </p>
-            <button id="depression-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+            <a href="/toolKit/depression"><button id="depression-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button></a>
         </div>
 
         <div class="emotion-card bg-blue-400 p-4 shadow-md transition-transform transform hover:bg-blue-500 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('ptsd-card', 'ptsd-learn-more')">
@@ -50,7 +51,7 @@
             <p id="ptsd-card" class="emotion-description hidden text-center">
                 PTSD can be a challenging condition, but understanding it is the first step toward healing.
             </p>
-            <button id="ptsd-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+            <a href="/toolKit/ptsd"><button id="ptsd-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button></a>
         </div>
 
         <div class="emotion-card bg-blue-500 p-4 shadow-md transition-transform transform hover:bg-blue-600 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('bipolar-card', 'bipolar-learn-more')">
@@ -58,7 +59,7 @@
             <p id="bipolar-card" class="emotion-description hidden text-center">
                 Bipolar disorder involves fluctuations in mood and energy levels. Learn how to manage it.
             </p>
-            <button id="bipolar-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+            <a href="/toolKit/bipolar"><button id="bipolar-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button></a>
         </div>
     </div>
 </div>

@@ -1,1 +1,75 @@
 <% layout("layouts/boilerplate.ejs") %>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<div class="bg-purple-100">
+    <!-- Self Help Toolkit Section -->
+    <div class="max-w-7xl mx-auto px-2 py-10 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-6">
+            <h1 class="text-5xl font-bold mb-4">Self Help Toolkit</h1>
+            <p class="text-lg mb-6 pr-6">
+                Our emotional health can range from thriving to struggling. 
+                No matter what you’re experiencing, there are ways to take action to support yourself and those around you.
+            </p>
+        </div>
+        <div class="md:w-1/2">
+            <img src="https://images.unsplash.com/photo-1507652955-f3dcef5a3be5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Self Help Toolkit" class="w-full h-auto rounded-lg shadow-md">
+        </div>
+    </div>
+
+<!-- Toggleable Topics Section -->
+<div class="text-center my-10 bg-blue-50">
+    <h2 class="text-4xl font-semibold mb-6 pt-6">Pick a topic below that you’d like to explore:</h2>
+    <div class="flex flex-col space-y-4 items-center">
+        <!-- Toggleable Topic Cards -->
+        <div class="emotion-card bg-blue-100 p-4 shadow-md transition-transform transform hover:bg-blue-200 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('anxiety-card', 'anxiety-learn-more')">
+            <h3 class="font-bold text-xl text-center">Anxiety</h3>
+            <p id="anxiety-card" class="emotion-description hidden text-center">
+                Anxiety can make you feel overwhelmed and restless. 
+                Here are ways to manage anxiety effectively.
+            </p>
+            <button id="anxiety-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+        </div>
+
+        <div class="emotion-card bg-blue-200 p-4 shadow-md transition-transform transform hover:bg-blue-300 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('stress-card', 'stress-learn-more')">
+            <h3 class="font-bold text-xl text-center">Stress</h3>
+            <p id="stress-card" class="emotion-description hidden text-center">
+                Stress can be a common experience for many, but managing it is crucial for your well-being.
+            </p>
+            <button id="stress-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+        </div>
+
+        <div class="emotion-card bg-blue-300 p-4 shadow-md transition-transform transform hover:bg-blue-400 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('depression-card', 'depression-learn-more')">
+            <h3 class="font-bold text-xl text-center">Depression</h3>
+            <p id="depression-card" class="emotion-description hidden text-center">
+                Depression can feel heavy and isolating. There are effective strategies to cope.
+            </p>
+            <button id="depression-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+        </div>
+
+        <div class="emotion-card bg-blue-400 p-4 shadow-md transition-transform transform hover:bg-blue-500 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('ptsd-card', 'ptsd-learn-more')">
+            <h3 class="font-bold text-xl text-center">PTSD</h3>
+            <p id="ptsd-card" class="emotion-description hidden text-center">
+                PTSD can be a challenging condition, but understanding it is the first step toward healing.
+            </p>
+            <button id="ptsd-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+        </div>
+
+        <div class="emotion-card bg-blue-500 p-4 shadow-md transition-transform transform hover:bg-blue-600 cursor-pointer w-full max-w-4xl mx-1" onclick="toggleCard('bipolar-card', 'bipolar-learn-more')">
+            <h3 class="font-bold text-xl text-center">Bipolar Disorder</h3>
+            <p id="bipolar-card" class="emotion-description hidden text-center">
+                Bipolar disorder involves fluctuations in mood and energy levels. Learn how to manage it.
+            </p>
+            <button id="bipolar-learn-more" class="learn-more hidden mt-2 px-4 py-2 bg-black text-white rounded-md">LEARN MORE</button>
+        </div>
+    </div>
+</div>
+<script>
+    function toggleCard(cardId, buttonId) {
+        const description = document.getElementById(cardId);
+        const learnMoreButton = document.getElementById(buttonId);
+
+        // Toggle visibility of description and button
+        description.classList.toggle('hidden');
+        learnMoreButton.classList.toggle('hidden');
+    }
+</script>
+</div>

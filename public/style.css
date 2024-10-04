@@ -2,7 +2,7 @@
 .custom-navbar {
     background-color: #FFF8ED /* Light beige background */
     padding: 15px 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
 }
 
 /* Brand Name Styling */
@@ -85,7 +85,7 @@ body {
     font-family: 'Montserrat', sans-serif; /* Use a modern sans-serif font */
     font-weight: bold; /* Make the text bold */
     font-size: 2.5rem; /* Increase font size for headers */
-    color: #2e8b57; /* Set a soothing color */
+    color: #1c4e4b; /* Set a soothing color */
     margin: 20px 0; /* Space between titles */
     letter-spacing: 1px; /* Add spacing between letters */
     text-transform: uppercase; /* Make text uppercase for emphasis */
@@ -93,7 +93,7 @@ body {
 
 .sub-header {
     font-size: 1.5rem; /* Adjust the size for the sub-header */
-    color: #6B8E23; /* A complementary green color */
+    color: #33a954; /* A complementary green color */
     font-weight: 300; /* Lighter font weight */
     margin-top: 10px; /* Space above the subtitle */
 }
@@ -102,7 +102,7 @@ body {
     font-size: 6rem; /* Increased font size significantly to look like the name of the website */
     font-weight: bold; /* Make the website name bold */
     margin: 20px 0; /* Space around the website name */
-    color: #2e8b57; /* Same color as headers */
+    color: #1c4e4b; /* Same color as headers */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
 }
 
@@ -296,6 +296,7 @@ body {
     font-size: 2.5rem; /* Title size */
     color: #2e8b57; /* Dark green color for the title */
     margin-bottom: 20px; /* Space below the title */
+    font-family: 'Playfair Display', serif;
 }
 
 .mission-image {
@@ -390,16 +391,22 @@ ul li a:hover {
 
 /* explore section */
 .explore-section {
-    background-color: #E5F0E6; /* Background color for the section */
+    background-color: #FFF8ED; /* Background color for the section */
     padding: 20px; /* Padding around the explore section */
     margin: 0px;
 }
 
 /* Heading Styles */
+/* Updated Heading Styles */
 .explore-section h1 {
     font-weight: bold; /* Make the heading bolder */
     margin-top: 20px; /* Add space above the heading */
+    text-align: center; /* Center the heading text */
+    color: #012f2c; /* Change text color to #012f2c */
+    font-family: 'Playfair Display', serif; /* Set font to Playfair Display */
+    padding-bottom: 10px;
 }
+
 
 /* Card styles remain the same */
 .card {
@@ -408,12 +415,17 @@ ul li a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 15px; /* Padding inside the card */
     margin: 10px; /* Space between cards */
+    height: 350px; /* Fixed height for uniformity */
+    display: flex; /* Use flexbox for better alignment */
+    flex-direction: column; /* Align items in a column */
+    justify-content: space-between; /* Space between items */
 }
 
 .card img {
     border-radius: 10px 10px 0 0; /* Rounded top corners for images */
-    max-width: 100%; /* Ensure images are responsive */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; /* Ensure images take full width */
+    height: 200px; /* Fixed height for the images */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
 }
 
 .card:hover {
@@ -435,11 +447,11 @@ ul li a:hover {
 
 /* Button Styles */
 .getStarted {
-    background-color: rgb(75, 0, 130); /* Indigo background */
-    color: white; /* White text color */
+    background-color: #1c4e4b; /* Background color */
+    color: #D49F11; /* Text color */
     border: none; /* No border */
     border-radius: 10px; /* More rounded corners */
-    padding: 0px; /* Slightly increased padding for better size */
+    padding: 10px 20px; /* Increased padding for better size */
     font-size: 1rem; /* Larger font size */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
@@ -448,7 +460,7 @@ ul li a:hover {
 
 /* Button hover effect */
 .getStarted:hover {
-    background-color: rgb(60, 0, 120); /* Darker indigo on hover */
+    background-color: #012f2c; /* Change background color on hover */
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
 
@@ -494,4 +506,5 @@ ul li a:hover {
     padding: 20px;
   }
     
+
 

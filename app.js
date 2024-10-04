@@ -6,6 +6,8 @@ const ejsMate = require("ejs-mate");
 const mongoose = require("mongoose");
 const Gratitude = require("./models/gratitudeModel");
 const Mood = require("./models/moodModel");
+const Journal = require("./models/journal");
+
 
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/nirvana');
@@ -69,6 +71,7 @@ app.post("/gratitudeWall/:id/add", async (req, res) => {
 
 app.get("/moodTracker", async (req,res) => {
     const allMoods = await Mood.find({});
+    console.log(allMoods);
     res.render("moodTracker.ejs", {allMoods});
 })
 
@@ -132,6 +135,31 @@ app.get('/moodTracker/:date', async (req, res) => {
     res.render('moodSelectedDate.ejs', { moodEntries, selectedDate, allMoods});
 });
 
+
+//journal
+
+app.get("/journal", async (req,res) => {
+    const allJournals = await Journal.find({});
+    console.log(allJournals);
+    res.render("journal.ejs", {allJournals});
+})
+
+app.post("/journal",async (req,res) => {
+    console.dir(req.body);
+    let newJournalEntry = new Journal({
+        journalContent : req.body.journalContent,
+        templateClass : req.body.templateClass
+    })
+
+    console.log(newJournalEntry);
+    await newJournalEntry.save()
+    res.redirect("/journal");
+})
+
+
+app.get("/toolKit", (req,res) => {
+    res.render("toolKit.ejs");
+})
 
 
 //port-setup

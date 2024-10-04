@@ -1,0 +1,37 @@
+<% layout("layouts/boilerplate.ejs") %>
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button onclick="changeTemplate('vintage-template')" type="button" class="btn ">Vintage</button>
+    <button onclick="changeTemplate('minimalist-template')" type="button" class="btn ">Minimalist</button>
+    <button onclick="changeTemplate('dreamy-template')" type="button" class="btn">Dreamy</button>
+</div>
+
+<div contenteditable="true" class="journal-page">
+    Write your journal entry here...
+</div>
+
+<form id="journal-form" action="/journal" method="POST">
+    <input type="hidden" name="journalContent" id="journalContent" required>
+    <input type="hidden" name="templateClass" id="templateClass">
+    <button type="submit" class="btn">Save Entry</button>
+</form>
+
+<% for(let journal of allJournals) { %>
+  <div contenteditable="false" class="journal-page <%= journal.templateClass %>">
+    <%= journal.journalContent %>
+  </div>
+<% } %>
+
+<script>
+    // Capture the template class when a button is clicked
+    function changeTemplate(template) {
+        const journal = document.querySelector('.journal-page');
+        journal.className = `journal-page ${template}`;
+        document.getElementById('templateClass').value = template; // Set the template class in the hidden input
+    }
+
+    // Capture the journal content before submission
+    document.getElementById('journal-form').addEventListener('submit', function() {
+        const journalContent = document.querySelector('.journal-page').innerHTML;
+        document.getElementById('journalContent').value = journalContent; // Set the journal content in the hidden input
+    });
+</script>

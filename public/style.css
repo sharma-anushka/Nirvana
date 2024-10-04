@@ -459,5 +459,39 @@ ul li a:hover {
 }
 
 
+.journal-page {
+    width: 80%;
+    height: 500px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: linear-gradient(to bottom, transparent 24px, #ccc 25px);
+    background-size: 100% 25px; /* Distance between lines */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 25px;
+    outline: none;
+    overflow: auto;
+  }
+  .vintage-template {
+    background-color: #f5f5dc;
+    font-family: 'Georgia', serif;
+    color: #5d4037;
+    border: 2px solid #d2b48c;
+  }
 
+  .minimalist-template {
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    border: 2px solid #eee;
+  }
+  .dreamy-template {
+    background-color: #f0f8ff; /* Soft blue color */
+    font-family: 'Cursive', sans-serif;
+    color: #4b0082; /* Indigo text */
+    border: 2px solid #b0c4de; /* Light steel blue border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    padding: 20px;
+  }
+    
 

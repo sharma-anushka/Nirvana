@@ -18,6 +18,9 @@
     width: 12rem;
 }
 
+.gratitudeInput{
+    background-color: beige;
+}
 
 /* General Page Styling */
 .mood-tracker-page {

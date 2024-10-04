@@ -6,3 +6,95 @@
 <h5 class="home-header">
     Share what you are <i>grateful</i> for and spread positivity
 </h5>
+
+<div class="col-12 card gratitudeInput">[
+    <form action="/gratitudeWall/<%= gratitudes[0]._id %>/add" method="POST">
+        <div class="col-10 mb-3 ">
+            <label for="gratitudeFor" class="form-label">What are you grateful for ?</label><br>
+            <textarea class="form-control" name="gratitude[gratitudeFor]" id="gratitudeFor" required></textarea>
+        </div>
+        <div class="col-10 mb-3 form-label"></div>
+            <label for="image" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="file" name="gratitude[image]" accept=".pdf,.doc,.docx,.txt" >
+        </div>
+        <button class="btn">Post</button>
+    </form>
+
+
+
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card">
+                <div class="card-body">
+                    <%= gratitudes[0].gratitudeFor%>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                    <%= gratitudes[0].gratitudeFor%>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                    <%= gratitudes[1].gratitudeFor%>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                  <%= gratitudes[2].gratitudeFor%>
+                </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+                <div class="card-body">
+                  <%= gratitudes[3].gratitudeFor%>
+                </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+<div>
+    <h4>
+        See what others are <i>Grateful</i> for
+    </h4>
+    <% for(let gratitude of gratitudes) {%>
+        <div class="card">
+            <!-- <div class="card-header">
+            Quote
+            </div> -->
+            <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>
+                    <%= gratitude.gratitudeFor %>
+                </p>
+                <footer class="blockquote-footer">Username</cite></footer>
+            </blockquote>
+            </div>
+        </div>
+    <%}%>
+</div>

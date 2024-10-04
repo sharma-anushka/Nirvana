@@ -1,0 +1,19 @@
+<% layout("layouts/boilerplate.ejs") %>
+<div class="bub">
+    <div class="bubble" id="bubble">Inhale</div>
+    <script src="script.js"></script>
+</div>
+
+<script>
+    // script.js
+    const bubble = document.getElementById('bubble');
+
+    setInterval(() => {
+        if (bubble.textContent === "Inhale") {
+            bubble.textContent = "Exhale";
+        } else {
+            bubble.textContent = "Inhale";
+        }
+    }, 2000);
+
+</script>

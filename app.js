@@ -161,6 +161,10 @@ app.get("/toolKit", (req,res) => {
     res.render("toolKit.ejs");
 })
 
+app.get("/emergency/main", (req,res) => {
+    res.render("emergency/main.ejs");
+})
+
 
 //port-setup
 app.listen(8080, () => {

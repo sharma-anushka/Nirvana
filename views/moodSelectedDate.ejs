@@ -1,6 +1,6 @@
 <% layout("layouts/boilerplate.ejs") %>
 
-<div class="mood-tracker-page">
+<body class="mood-tracker-page">
     <!-- Header -->
     <header class="header">
         <h1>How Are You Feeling Today?</h1>
@@ -17,6 +17,7 @@
                 <button type="button" class="mood-btn calm" title="Calm" onclick="setMood('calm')">😌</button>
             </div>
             <input type="hidden" id="mood" name="mood" required>
+
             <div>
                 <label for="intensity-slider">Mood Intensity:</label>
                 <input type="range" id="intensity-slider" min="1" max="10" name="intensity">
@@ -31,7 +32,7 @@
             </div>
         </section>
     </form>
-
+        
     <!-- Mood History Graph (Placeholder for actual graph integration) -->
     <section class="mood-history">
         <h2>Your Mood History</h2>
@@ -56,112 +57,64 @@
     </section>
 
     <!-- Past Entries Journal -->
+    <!-- <section class="past-entries">
+        <h2>Past Mood Entries</h2>
+        <div class="calendar-view">
+             Placeholder for Calendar -->
+            <!-- <p>Calendar view will be here.</p>
+        </div>
+        <div class="entry-list">
+            <div class="entry-card">
+                <p><strong>Date:</strong> 2024-09-28</p>
+                <p><strong>Mood:</strong> Happy 😊</p>
+                <p><strong>Note:</strong> Had a great day with friends!</p>
+            </div> --> 
+            <!-- More entry cards as needed -->
+        <!-- </div>
+    </section> -->
+
     <section class="past-entries">
         <h2>Past Mood Entries</h2>
         <div id="calendar">
-            <div class="calendar-view ">
-                <!-- Placeholder for Calendar -->
-                <p>Calendar view will be here.</p>
-            </div>
-        </div>    
+
+        </div>
     </section>
-</div>
 
-
-<% layout("layouts/boilerplate.ejs") %>
-
-<div class="mood-tracker-page">
-    <!-- Header -->
-    <header class="header">
-        <h1>How Are You Feeling Today?</h1>
-    </header>
-
-    <!-- Mood Check-In Form -->
-    <form action="/moodTracker/<%= allMoods[0]._id%>" method="POST">
-        <section class="mood-checkin">
-            <h2>Check-In Your Mood</h2>
-            <div class="mood-emojis">
-                <button type="button" class="mood-btn happy" title="Happy" onclick="setMood('happy')">😊</button>
-                <button type="button" class="mood-btn sad" title="Sad" onclick="setMood('sad')">😢</button>
-                <button type="button" class="mood-btn anxious" title="Anxious" onclick="setMood('anxious')">😟</button>
-                <button type="button" class="mood-btn calm" title="Calm" onclick="setMood('calm')">😌</button>
-            </div>
-            <input type="hidden" id="mood" name="mood" required>
-            <div>
-                <label for="intensity-slider">Mood Intensity:</label>
-                <input type="range" id="intensity-slider" min="1" max="10" name="intensity">
-            </div>
-            <div>
-                <label for="date">Choose a Date to Log Your Mood</label>
-                <input type="date" name="date" id="date" required>
-            </div>
-            <div>
-                <textarea placeholder="Tell us more about how you're feeling..." class="mood-text-box" name="note"></textarea>
-                <button class="btn-submit">Submit Mood</button>
+    <%for(let moodEntry of moodEntries){ %>
+        <section class="insights-reminders"></section>
+            <div class="insights">
+                <h3><%= moodEntry.mood %></h3>
+                <p>Intensity : <%= moodEntry.intensity %></p>
+                <p>Note : <%= moodEntry.note %></p>
             </div>
         </section>
-    </form>
-
-    <!-- Mood History Graph (Placeholder for actual graph integration) -->
-    <section class="mood-history">
-        <h2>Your Mood History</h2>
-        <div class="mood-graph">
-            <!-- Placeholder for graph (e.g., using Chart.js) -->
-            <canvas id="moodChart"></canvas>
-        </div>
-    </section>
-
-    <!-- Insights & Reminders -->
-    <section class="insights-reminders">
-        <div class="insights">
-            <h3>Insights</h3>
-            <p>You've felt "Calm" for 3 days this week!</p>
-            <p>"Anxious" more on Mondays.</p>
-        </div>
-        <div class="reminders">
-            <h3>Reminders</h3>
-            <p>Remember to log your mood daily!</p>
-            <p>"Every feeling matters!"</p>
-        </div>
-    </section>
-
-    <!-- Past Entries Journal -->
-    <section class="past-entries">
-        <h2>Past Mood Entries</h2>
-        <%for (let moodEntry of moodEntries) {%>
-        <div id="calendar">
-            <div class="calendar-view ">
-                <!-- Placeholder for Calendar -->
-                <p>Mood : <%= moodEntry.mood%></p>
-                <p>Intensity : <%= moodEntry.intensity%></p>
-                <p>Note : <%= moodEntry.note%></p>
-            </div>
-        </div> 
-        <%}%>   
-    </section>
-</div>
+    <%}%>
 
 
-<script>
-    function setMood(mood) {
-        document.getElementById('mood').value = mood;
-
-    }
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',  // Display month view
-            dateClick: function(info) {
-                // Redirect to a URL with the clicked date
-                var selectedDate = info.dateStr;  // Get the clicked date as a string (YYYY-MM-DD)
-                window.location.href = `/moodTracker/${selectedDate}`;  // Redirect to the desired route
+    <script>
+        function setMood(mood) {
+            document.getElementById('mood').value = mood;
+    
+        }
+    </script>
+    
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            
+            if (calendarEl) {
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    dateClick: function(info) {
+                        var selectedDate = info.dateStr;
+                        window.location.href = `/moodTracker/${selectedDate}`;
+                    }
+                });
+    
+                calendar.render();
+            } else {
+                console.error('Calendar element not found');
             }
         });
-
-        calendar.render();  // Render the calendar
-    });
-</script>
+    </script>

@@ -8,7 +8,7 @@
 
     <!-- Mood Check-In Form -->
     <form action="/moodTracker/<%= allMoods[0]._id%>" method="POST">
-        <section class="mood-checkin">
+        <section class="mood-checkin mb-5">
             <h2>Check-In Your Mood</h2>
             <div class="mood-emojis">
                 <button type="button" class="mood-btn happy" title="Happy" onclick="setMood('happy')">😊</button>
@@ -73,7 +73,7 @@
         <!-- </div>
     </section> -->
 
-    <section class="past-entries">
+    <section class="past-entries mb-5">
         <h2>Past Mood Entries</h2>
         <div id="calendar">
 
@@ -81,7 +81,7 @@
     </section>
 
     <%for(let moodEntry of moodEntries){ %>
-        <section class="insights-reminders"></section>
+        <section class="insights-reminders mb-5"></section>
             <div class="insights">
                 <h3><%= moodEntry.mood %></h3>
                 <p>Intensity : <%= moodEntry.intensity %></p>
@@ -90,7 +90,7 @@
         </section>
     <%}%>
 
-
+<br><br>
     <script>
         function setMood(mood) {
             document.getElementById('mood').value = mood;

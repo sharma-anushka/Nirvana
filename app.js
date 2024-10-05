@@ -178,8 +178,22 @@ app.get("/toolKit/bipolar", (req, res) => {
     res.render("toolKit/bipolar.ejs");
 })
 
+
+
+
 app.get("/emergency/main", (req,res) => {
     res.render("emergency/main.ejs");
+})
+
+app.get("/emergency/breathe", (req, res) => {
+    res.render("emergency/breathing.ejs");
+})
+
+app.get("/emergency/grounding", (req, res) => {
+    res.render("emergency/grounding.ejs");
+})
+app.get("/emergency/affirmations", (req, res) => {
+    res.render("emergency/affirmations.ejs");
 })
 
 

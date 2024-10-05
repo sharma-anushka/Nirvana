@@ -1,0 +1,54 @@
+<% layout("layouts/boilerplate.ejs") %>
+<div class="affirmations-container">
+    <h1>Self Affirmations</h1>
+    <p>Take a moment to reflect on these affirmations.</p>
+
+    <div class="affirmation-box">
+        <p id="affirmation-text">"I am enough."</p>
+        <button id="new-affirmation-btn" class="btn">Show Another Affirmation</button>
+    </div>
+
+    
+</div>
+
+<script>
+    const affirmations = [
+        "I am worthy of love and respect.",
+        "I believe in my abilities.",
+        "I am capable of achieving my goals.",
+        "I choose to be happy and positive.",
+        "I deserve all good things in life."
+    ];
+
+    document.getElementById('new-affirmation-btn').addEventListener('click', function() {
+        const randomIndex = Math.floor(Math.random() * affirmations.length);
+        document.getElementById('affirmation-text').innerText = affirmations[randomIndex];
+    });
+</script>
+
+<style>
+    .affirmations-container {
+        padding: 20px;
+        text-align: center;
+        background-color: #f9f9f9;
+    }
+    
+    .affirmation-box {
+        border: 2px solid #ccc;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    
+    .custom-affirmations {
+        margin-top: 20px;
+    }
+
+    .affirmation {
+        background-color: #e0f7fa;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+    }
+</style>

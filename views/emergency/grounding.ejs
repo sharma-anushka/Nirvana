@@ -1,0 +1,61 @@
+<% layout("layouts/boilerplate.ejs") %>
+
+<div class="ground">
+<h1>5-4-3-2-1 Grounding Technique</h1>
+
+    <div class="technique">
+        <h2>Instructions:</h2>
+        <p>Use the 5-4-3-2-1 technique to ground yourself:</p>
+        <ol>
+            <li>Identify 5 things you can see.</li>
+            <li>Identify 4 things you can touch.</li>
+            <li>Identify 3 things you can hear.</li>
+            <li>Identify 2 things you can smell.</li>
+            <li>Identify 1 thing you can taste.</li>
+        </ol>
+    </div>
+
+    <div class="timer">Time to think: <span id="time">15</span> seconds</div>
+    <button id="startButton">Start Grounding Technique</button>
+
+</div>
+    <script>
+        let currentStep = 0;
+        const steps = [
+            "Identify 5 things you can see.",
+            "Identify 4 things you can touch.",
+            "Identify 3 things you can hear.",
+            "Identify 2 things you can smell.",
+            "Identify 1 thing you can taste."
+        ];
+        const totalTime = 15; 
+
+        document.getElementById("startButton").addEventListener("click", startGrounding);
+
+        function startGrounding() {
+            currentStep = 0;
+            showStep();
+        }
+
+        function showStep() {
+            if (currentStep < steps.length) {
+                alert(steps[currentStep]); 
+                countdown(totalTime); 
+                currentStep++;
+            } else {
+                alert("You have completed the grounding technique.");
+            }
+        }
+
+        function countdown(time) {
+            const timerDisplay = document.getElementById("time");
+            let interval = setInterval(() => {
+                timerDisplay.textContent = time;
+                time--;
+                if (time < 0) {
+                    clearInterval(interval);
+                    showStep(); // Show next step after time is up
+                }
+            }, 1000);
+        }
+    </script>

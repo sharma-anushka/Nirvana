@@ -8,7 +8,7 @@
 
     <!-- Mood Check-In Form -->
     <form action="/moodTracker/<%= allMoods[0]._id%>" method="POST">
-        <section class="mood-checkin">
+        <section class="mood-checkin mb-5">
             <h2>Check-In Your Mood</h2>
             <div class="mood-emojis">
                 <button type="button" class="mood-btn happy" title="Happy" onclick="setMood('happy')">😊</button>
@@ -34,13 +34,7 @@
     </form>
         
     <!-- Mood History Graph (Placeholder for actual graph integration) -->
-    <section class="mood-history">
-        <h2>Your Mood History</h2>
-        <div class="mood-graph">
-            <!-- Placeholder for graph (e.g., using Chart.js) -->
-            <canvas id="moodChart"></canvas>
-        </div>
-    </section>
+    
 
     <!-- Insights & Reminders -->
     <section class="insights-reminders">

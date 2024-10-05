@@ -1,0 +1,298 @@
+<% layout("layouts/boilerplate.ejs") %>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="bg-[#F2E5FF]">
+    <div class="bg-purple-100 flex items-center p-8 mb-8 w-full">
+        <div class="w-1/2 pr-4">
+            <h1 class="text-purple-900 text-4xl font-bold mb-4">Anxiety</h1>
+            <p class="text-purple-800 mb-6">
+                Feeling anxious does not always mean a person has a mental health condition. Many people occasionally feel anxious from time to time.But when anxiety becomes frequent, out of proportion to a situation, or persists after the situation is over, it can be a sign of an anxiety disorder.
+            </p>
+            <button id="view-faqs-button" class="text-purple-700 border border-purple-700 px-6 py-2 rounded-lg hover:bg-purple-700 hover:text-white transition-colors duration-200">
+                View FAQs
+            </button>
+        </div>
+        <div class="w-1/2">
+            <img src="https://media.licdn.com/dms/image/D5612AQF_UzFfEovSyA/article-cover_image-shrink_720_1280/0/1688871026583?e=2147483647&v=beta&t=jC8gaAjVkdj7f5jftgO7szobreqIVAhSyoMlhLyI78E" alt="Stress visual" class="rounded-lg w-full h-auto object-cover">
+        </div>
+    </div>
+    <!-- what is anxiety block -->
+    <div class="bg-purple-50 text-purple-900 p-8 w-full h-400px min-h-64">
+        <h2 class="text-2xl font-bold mb-2">What is anxiety?</h2>
+        <p>Anxiety is a feeling of fear, tension, or worry that occurs as a response to real or perceived threats.</p>
+        <p>When a person feels afraid, it triggers the body’s stress response, also known as fight, flight, or freeze. This can involveTrusted Source cognitive, physical, and behavioral changes, such as an increase in heart rate or breathing.</p>
+    </div>
+
+    <!-- Reflecting -->
+    <div class="bg-purple-700 text-white p-8 shadow-md mb-0">
+        <h2 class="text-3xl font-bold mb-4">Reflect</h2>
+        <p class="mb-6 text-lg">Distracting ourselves to anxious feelings may provide temporary relief, but when it’s not addressed directly, anxiety can come back with a vengeance. Leaning into anxious feelings can help us identify coping strategies to use.</p>
+
+        <!-- Question 1 -->
+        <div class="mb-4">
+            <div class="w-full text-left bg-purple-800 hover:bg-purple-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                <span class="font-semibold">What specific situations or events tend to trigger anxiety?</span>
+                <span class="faq-arrow text-2xl">▼</span>
+            </div>
+            <div class="hidden mt-2 text-purple-200">
+                <p>Anxiety often arises in large crowds or during public speaking events. Situations such as important work meetings or social gatherings with unfamiliar faces can lead to feelings of racing hearts and sweaty palms. Additionally, tight deadlines may evoke a sense of being overwhelmed, further intensifying anxiety.</p>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="mb-4">
+            <div class="w-full text-left bg-purple-800 hover:bg-purple-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                <span class="font-semibold">How do individuals typically respond when they start to feel anxious?</span>
+                <span class="faq-arrow text-2xl">▼</span>
+            </div>
+            <div class="hidden mt-2 text-purple-200">
+                <p>When anxiety begins to surface, the initial response may be to avoid the triggering situation. Common reactions include overthinking, pacing, or fidgeting, which can exacerbate feelings of anxiety. Difficulty concentrating and irritability may also occur. However, techniques like deep breathing can be effective in calming the mind and refocusing thoughts.</p>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="mb-4">
+            <div class="w-full text-left bg-purple-800 hover:bg-purple-900 p-4 rounded-lg flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                <span class="font-semibold">What coping strategies have proven effective in managing anxiety?</span>
+                <span class="faq-arrow text-2xl">▼</span>
+            </div>
+            <div class="hidden mt-2 text-purple-200">
+                <p>Journaling can be an effective tool for processing thoughts and emotions related to anxiety. Writing about worries often provides a different perspective, making them feel less overwhelming. Engaging in physical activities like yoga or running can help release built-up tension and clear the mind. Additionally, discussing feelings with trusted friends or family members can offer comfort and understanding.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breathing exercise -->
+     <div class="bg-purple-50 flex items-center p-8 w-full shadow-md">
+        <div class="w-1/2 pr-4">
+            <h1 class="text-purple-900 text-4xl font-bold mb-4">Breathe</h1>
+            <p class="text-purple-700">Take a moment for yourself—engage in our guided breathing exercises to calm your mind and ease anxiety. Feel the weight lift as you breathe in peace and breathe out tension.</p>
+        </div>
+        <div class="w-1/2 pl-4 text-center">
+            <img src="https://media.post.rvohealth.io/wp-content/uploads/sites/2/2015/09/GRT_13180-6_breathing-exercises-fb-1200x628.png" alt="Breathing Exercise" class="mb-4 mx-auto rounded-md shadow-lg">
+            <button id="try-breathing-button" class="text-purple-700 border border-purple-700 px-6 py-2 rounded-lg hover:bg-purple-700 hover:text-white transition-colors duration-200">
+                Try Breathing Exercise
+            </button>
+        </div>
+    
+        <!-- Breathing Exercise Card -->
+<div id="exerciseCard" class="hidden fixed inset-0 flex items-center justify-center z-50">
+    <div class="bg-blue-800 text-white rounded-lg p-6 shadow-lg relative w-1/2 max-w-md">
+        <h2 class="text-center text-2xl font-bold mb-4">Breathing Exercise</h2>
+        <div id="timer" class="text-center text-4xl mb-4">120</div>
+        <div id="instruction" class="text-center text-xl mb-4">Inhale</div>
+        
+        <div id="circle" class="w-32 h-32 rounded-full border-4 border-white flex items-center justify-center mx-auto mb-4">
+            <div id="animation-circle" class="w-20 h-20 bg-blue-600 rounded-full animate-breathe"></div>
+        </div>
+
+        <button id="closeExercise" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded">
+            Close
+        </button>
+    </div>
+</div>
+    </div>
+    
+
+    <!-- Anxiety-relieving yoga poses-->
+<div class="bg-purple-100 p-8">
+    <h1 class="text-purple-900 text-3xl font-bold text-center mb-6">Anxiety-Relieving Yoga Poses</h1>
+    <p class="text-purple-700 text-base text-center mb-8">Here are several yoga poses that can be particularly beneficial for reducing anxiety:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Pose 1: Corpse Pose -->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://images.squarespace-cdn.com/content/v1/5d31ed671abe780001b2964d/1629138771884-ML3UZ97NYL33IQ3HJA7L/image-asset.jpeg" alt="Corpse Pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Corpse Pose</h2>
+            <p class="text-purple-700 text-sm text-center">This final relaxation pose promotes deep rest and integration of the practice, helping to calm the mind and reduce stress.</p>
+        </div>
+
+        <!-- Pose 2: Bridge Pose-->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1630225758612-8c511aad6c00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJpZGdlJTIwUG9zZSUyMHlvZ2F8ZW58MHx8MHx8fDA%3D" alt="Cat-Cow Stretch" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Bridge Pose</h2>
+            <p class="text-purple-700 text-sm text-center">This pose opens the chest and heart, promoting feelings of joy and reducing anxiety.</p>
+        </div>
+
+        <!-- Pose 3: Warrior II -->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://www.google.com/imgres?q=Warrior%20II&imgurl=https%3A%2F%2Fwww.thehealthjournals.com%2Fwp-content%2Fuploads%2F2017%2F03%2FYoganatomy_Warrior_Two-1024x683.jpg&imgrefurl=https%3A%2F%2Fwww.thehealthjournals.com%2Fyoganatomy-warrior-two%2F&docid=6LePeYqNe0CXAM&tbnid=squPIroGEseUSM&vet=12ahUKEwj7lqqe4_WIAxV7cGwGHT4BINcQM3oECF8QAA..i&w=1024&h=683&hcb=2&ved=2ahUKEwj7lqqe4_WIAxV7cGwGHT4BINcQM3oECF8QAA" alt="Standing Forward Bend" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Warrior II</h2>
+            <p class="text-purple-700 text-sm text-center">This pose builds strength and confidence, helping to combat feelings of anxiety.</p>
+        </div>
+
+        <!-- Pose 4: Downward Facing Dog -->
+        <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+            <img src="https://plus.unsplash.com/premium_photo-1661963354273-db9922d48f1f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Legs-Up-The-Wall Pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Downward Facing Dog</h2>
+            <p class="text-purple-700 text-sm text-center">This reThis pose stretches the entire body, helps relieve tension, and increases blood flow to the brain.</p>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Relaxation videos & audios -->
+    <div class="bg-purple-200 text-purple-900 p-8 w-full shadow-md min-h-64">
+        <h2 class="text-2xl font-bold mb-2">Relaxation Videos & Audios</h2>
+        <p>Watch and listen to relaxation videos to reduce anxiety:</p>
+        <ul class="list-disc pl-6">
+            <li><a href="https://www.youtube.com/watch?v=tuPW7oOudVc" class="text-blue-700 underline" target="_blank">10-Minute Guided Meditation</a></li>
+            <li><a href="https://www.youtube.com/watch?v=cI4ryatVkKw" class="text-blue-700 underline" target="_blank">Relaxing Nature Sounds</a></li>
+        </ul>
+    </div>
+
+    <!-- 3-3-3 Rule for Anxiety -->
+    <div class="bg-purple-300 text-purple-900 p-8 w-full shadow-md min-h-64">
+        <h2 class="text-2xl font-bold mb-2">3-3-3 Rule for Anxiety</h2>
+        <p class="p-4">If you find yourself getting caught up in anxious thoughts, you can use the 3-3-3 technique to bring your attention back to the present moment.</p>
+        <div class="w-full p-6 bg-purple-300">
+            <div class="flex flex-row space-x-4">
+              <!-- First Rule Box -->
+              <div class="flex-1 bg-blue-500 text-white p-6 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                <h2 class="text-xl font-semibold mb-3">Look Around</h2>
+                <p>Identify three things you can see. Observe their details, colors, and shapes to shift your focus from internal anxiety to your external environment.</p>
+              </div>
+          
+              <!-- Second Rule Box -->
+              <div class="flex-1 bg-green-500 text-white p-6 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                <h2 class="text-xl font-semibold mb-3">Listen Closely</h2>
+                <p>Find three sounds you can hear. These can be as loud as a siren or as subtle as the hum of an air conditioner. Focus on these sounds to calm your mind.</p>
+              </div>
+          
+              <!-- Third Rule Box -->
+              <div class="flex-1 bg-yellow-500 text-white p-6 rounded-md shadow-md hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out">
+                <h2 class="text-xl font-semibold mb-3">Move Your Body</h2>
+                <p>Move three parts of your body—roll your shoulders, wiggle your toes, or turn your head. Notice the sensations caused by these movements to ground yourself in the present.</p>
+              </div>
+            </div>
+          </div>          
+    </div>
+
+    <!-- FAQs Section -->
+    <div id="faqs" class="faq-section bg-purple-50 shadow-md p-6 w-full rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
+
+        <!-- FAQ 1 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">What coping skills help with anxiety?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Some short-term coping skills that can help with anxiety include breathing techniques and grounding techniques.</p>
+                <p>Breathing techniques involve slowing breathing down to help calm the nervous system. Grounding techniques involve focusing on things that remind a person of the present moment. Mindfulness has a similar approach.</p>
+            </div>
+        </div>
+
+        <!-- Add your other FAQs below in a similar format -->
+        <!-- FAQ 2 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">Can lifestyle changes really help reduce anxiety?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Absolutely! Making lifestyle changes, such as regular physical activity, healthy eating, adequate sleep, and practicing relaxation techniques like yoga or meditation, can significantly reduce anxiety levels. Establishing a routine and setting aside time for enjoyable activities also contributes to a healthier mental state. These changes can complement professional treatment and enhance overall well-being.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">How can I tell if I have an anxiety disorder?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>While everyone experiences anxiety, an anxiety disorder is diagnosed when anxiety becomes persistent, overwhelming, and interferes with daily life. Common symptoms include excessive worrying, restlessness, difficulty concentrating, irritability, sleep disturbances, and physical symptoms like rapid heartbeat. If you find that your anxiety is affecting your work, relationships, or overall well-being, it may be helpful to consult a mental health professional for an evaluation.</p>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item mb-4 border-b border-purple-300">
+            <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200 " onclick="toggleFAQ(this)">
+                <h3 class="text-lg font-medium text-purple-900">Should I see a psychologist or psychiatrist?</h3>
+                <span class="faq-arrow text-purple-700">▼</span>
+            </div>
+            <div class="faq-answer hidden p-3">
+                <p>Generally speaking, if a person has mild to moderate anxiety, they can often get effective treatment from their primary care doctor. For talk therapy, a doctor may refer someone to a psychologist.Psychiatrists can also provide talk therapy, but unlike psychologists, they can also prescribe medications.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to toggle FAQ visibility
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    answer.classList.toggle('hidden'); // Toggle visibility
+    const arrow = element.querySelector('.faq-arrow');
+    arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; // Change arrow direction
+}
+
+// Start breathing exercise
+document.getElementById('try-breathing-button').addEventListener('click', function() {
+    const exerciseCard = document.getElementById('exerciseCard');
+    exerciseCard.classList.remove('hidden');
+
+    let timeLeft = 120; // Total duration of the exercise in seconds
+    const timerDisplay = document.getElementById('timer');
+    const instruction = document.getElementById('instruction');
+    const breathingDuration = 4; // Seconds for inhale/exhale
+    let inhale = true;
+
+    timerDisplay.textContent = timeLeft;
+
+    // Update breathing every second
+    const countdown = setInterval(function() {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft % 8 === 0) { // Every 8 seconds (4s inhale + 4s exhale)
+            instruction.textContent = inhale ? "Inhale" : "Exhale";
+            inhale = !inhale; // Toggle inhale/exhale
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            instruction.textContent = "Great job! You're done!";
+            document.getElementById('animation-circle').classList.add('hidden'); // Optionally hide circle at the end
+        }
+    }, 1000);
+});
+
+// Close breathing exercise
+document.getElementById('closeExercise').addEventListener('click', function() {
+    document.getElementById('exerciseCard').classList.add('hidden');
+    clearInterval(countdown); // Clear the interval when closing
+});
+
+// Event listener for the FAQs button
+document.getElementById('view-faqs-button').addEventListener('click', function() {
+    const faqsSection = document.getElementById('faqs'); // Get the FAQs section
+    
+    // Scroll to the FAQs section smoothly
+    faqsSection.scrollIntoView({ behavior: 'smooth' });
+});
+// for horizontal scroll
+const carousel = document.getElementById('carousel');
+const leftButton = document.getElementById('leftButton');
+const rightButton = document.getElementById('rightButton');
+
+let scrollAmount = 0;
+
+rightButton.addEventListener('click', () => {
+    scrollAmount += carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+
+leftButton.addEventListener('click', () => {
+    scrollAmount -= carousel.clientWidth * 0.6;
+    carousel.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+    });
+});
+</script>

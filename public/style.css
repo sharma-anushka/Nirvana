@@ -1197,3 +1197,72 @@ h4 {
     }
 }
 /* gratitude styling ends */
+
+
+
+
+
+/* Self Affirmations Page Styling */
+.affirmations-container {
+    padding: 40px;
+    text-align: center;
+    background-color: #F3E8EE;
+    font-family: 'Arial', sans-serif;
+    color: #4A4A4A;
+}
+
+.affirmations-container h1 {
+    font-size: 2.5em;
+    color: #7D5A50;
+    margin-bottom: 20px;
+}
+
+.affirmations-container p {
+    font-size: 1.2em;
+    color: #C06C84;
+    margin-bottom: 40px;
+}
+
+.affirmation-box {
+    border: 2px solid #C06C84;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#affirmation-text {
+    font-size: 1.5em;
+    color: #5C3D47;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+button.btn {
+    background-color: #7D5A50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+    background-color: #C06C84;
+}
+
+.custom-affirmations {
+    margin-top: 30px;
+}
+
+.affirmation {
+    background-color: #F8EDEB;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #7D5A50;
+    border-left: 5px solid #C06

@@ -16,7 +16,6 @@
             <img src="https://media.licdn.com/dms/image/D5612AQF_UzFfEovSyA/article-cover_image-shrink_720_1280/0/1688871026583?e=2147483647&v=beta&t=jC8gaAjVkdj7f5jftgO7szobreqIVAhSyoMlhLyI78E" alt="Stress visual" class="rounded-lg w-full h-auto object-cover">
         </div>
     </div>
-    <!-- what is anxiety block -->
     <div class="bg-purple-50 text-purple-900 p-8 w-full h-400px min-h-64">
         <h2 class="text-2xl font-bold mb-2">What is anxiety?</h2>
         <p>Anxiety is a feeling of fear, tension, or worry that occurs as a response to real or perceived threats.</p>
@@ -116,7 +115,7 @@
 
         <!-- Pose 3: Warrior II -->
         <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-            <img src="https://www.google.com/imgres?q=Warrior%20II&imgurl=https%3A%2F%2Fwww.thehealthjournals.com%2Fwp-content%2Fuploads%2F2017%2F03%2FYoganatomy_Warrior_Two-1024x683.jpg&imgrefurl=https%3A%2F%2Fwww.thehealthjournals.com%2Fyoganatomy-warrior-two%2F&docid=6LePeYqNe0CXAM&tbnid=squPIroGEseUSM&vet=12ahUKEwj7lqqe4_WIAxV7cGwGHT4BINcQM3oECF8QAA..i&w=1024&h=683&hcb=2&ved=2ahUKEwj7lqqe4_WIAxV7cGwGHT4BINcQM3oECF8QAA" alt="Standing Forward Bend" class="mb-2 mx-auto rounded-md h-32 object-cover">
+            <img src="https://res.cloudinary.com/peloton-cycle/image/fetch/f_auto,c_limit,w_1200,q_90/https://images.ctfassets.net/6ilvqec50fal/12t2QwHVIhze3n63e3V7s0/ad398f6001c32909453a8c63de0285b8/warrior_2.jpg" alt="Standing Forward Bend" class="mb-2 mx-auto rounded-md h-32 object-cover">
             <h2 class="text-purple-900 text-xl font-semibold text-center mb-1">Warrior II</h2>
             <p class="text-purple-700 text-sm text-center">This pose builds strength and confidence, helping to combat feelings of anxiety.</p>
         </div>
@@ -172,7 +171,6 @@
     <div id="faqs" class="faq-section bg-purple-50 shadow-md p-6 w-full rounded-lg">
         <h2 class="text-2xl font-bold mb-4">Frequently Asked Questions</h2>
 
-        <!-- FAQ 1 -->
         <div class="faq-item mb-4 border-b border-purple-300">
             <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
                 <h3 class="text-lg font-medium text-purple-900">What coping skills help with anxiety?</h3>
@@ -184,8 +182,6 @@
             </div>
         </div>
 
-        <!-- Add your other FAQs below in a similar format -->
-        <!-- FAQ 2 -->
         <div class="faq-item mb-4 border-b border-purple-300">
             <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
                 <h3 class="text-lg font-medium text-purple-900">Can lifestyle changes really help reduce anxiety?</h3>
@@ -196,7 +192,6 @@
             </div>
         </div>
 
-        <!-- FAQ 3 -->
         <div class="faq-item mb-4 border-b border-purple-300">
             <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200" onclick="toggleFAQ(this)">
                 <h3 class="text-lg font-medium text-purple-900">How can I tell if I have an anxiety disorder?</h3>
@@ -207,7 +202,6 @@
             </div>
         </div>
 
-        <!-- FAQ 4 -->
         <div class="faq-item mb-4 border-b border-purple-300">
             <div class="faq-question flex justify-between items-center cursor-pointer p-3 hover:bg-purple-200 " onclick="toggleFAQ(this)">
                 <h3 class="text-lg font-medium text-purple-900">Should I see a psychologist or psychiatrist?</h3>
@@ -221,35 +215,35 @@
 </div>
 
 <script>
-    // Function to toggle FAQ visibility
+    
 function toggleFAQ(element) {
     const answer = element.nextElementSibling;
-    answer.classList.toggle('hidden'); // Toggle visibility
+    answer.classList.toggle('hidden'); 
     const arrow = element.querySelector('.faq-arrow');
-    arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; // Change arrow direction
+    arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; 
 }
 
-// Start breathing exercise
+
 document.getElementById('try-breathing-button').addEventListener('click', function() {
     const exerciseCard = document.getElementById('exerciseCard');
     exerciseCard.classList.remove('hidden');
 
-    let timeLeft = 120; // Total duration of the exercise in seconds
+    let timeLeft = 120; 
     const timerDisplay = document.getElementById('timer');
     const instruction = document.getElementById('instruction');
-    const breathingDuration = 4; // Seconds for inhale/exhale
+    const breathingDuration = 4; 
     let inhale = true;
 
     timerDisplay.textContent = timeLeft;
 
-    // Update breathing every second
+    
     const countdown = setInterval(function() {
         timeLeft--;
         timerDisplay.textContent = timeLeft;
 
-        if (timeLeft % 8 === 0) { // Every 8 seconds (4s inhale + 4s exhale)
+        if (timeLeft % 8 === 0) {
             instruction.textContent = inhale ? "Inhale" : "Exhale";
-            inhale = !inhale; // Toggle inhale/exhale
+            inhale = !inhale; 
         }
 
         if (timeLeft <= 0) {
@@ -260,20 +254,18 @@ document.getElementById('try-breathing-button').addEventListener('click', functi
     }, 1000);
 });
 
-// Close breathing exercise
 document.getElementById('closeExercise').addEventListener('click', function() {
     document.getElementById('exerciseCard').classList.add('hidden');
-    clearInterval(countdown); // Clear the interval when closing
-});
+    clearInterval(countdown);
 
-// Event listener for the FAQs button
+
 document.getElementById('view-faqs-button').addEventListener('click', function() {
-    const faqsSection = document.getElementById('faqs'); // Get the FAQs section
+    const faqsSection = document.getElementById('faqs'); 
     
-    // Scroll to the FAQs section smoothly
+  
     faqsSection.scrollIntoView({ behavior: 'smooth' });
 });
-// for horizontal scroll
+
 const carousel = document.getElementById('carousel');
 const leftButton = document.getElementById('leftButton');
 const rightButton = document.getElementById('rightButton');

@@ -15,7 +15,7 @@
                 </button>
             </div>
             <div class="w-1/2">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToEsmTiZonOJNC6Ficm7kjLLsJlfTn2v6iq1U2fGhMzXJoMe5rCwTFdko-4-BuW_hR0-U&usqp=CAU" alt="Depression visual" class="rounded-lg w-full h-auto object-cover">
+                <img src="https://cms.buzzrx.com/globalassets/buzzrx/blogs/what-are-the-17-symptoms-of-ptsd_.png" alt="Depression visual" class="rounded-lg w-full h-auto object-cover">
             </div>
         </div>
     
@@ -171,21 +171,21 @@
     
                 <!-- Pose 2: Chair Pose -->
                 <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8d4DdUAHfoDuNJ5OjrbJ5KWUnFs_kX7W2mQ&s" alt="Chair Pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
+                    <img src="https://res.cloudinary.com/peloton-cycle/image/fetch/f_auto,c_limit,w_1200,q_90/https://images.ctfassets.net/6ilvqec50fal/7s86zJ16VH5xj34ugehhE8/d9c78ba9dcdc85db011e959a3da3e551/Chair_pose.jpg" alt="Chair Pose" class="mb-2 mx-auto rounded-md h-32 object-cover">
                     <h2 class="text-gray-800 text-xl font-semibold text-center mb-1">Chair Pose</h2>
                     <p class="text-gray-700 text-sm text-center">When experiencing overwhelming emotions, it can be helpful to practice a pose that grounds and strengthens your mind and body.</p>
                 </div>
     
                 <!-- Pose 3: Alternate Nostril Breathing -->
                 <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQFHUC3PBUgkSkvELKVQv_4p0TnuV1uvEjIw&s" alt="Alternate Nostril Breathing" class="mb-2 mx-auto rounded-md h-32 object-cover">
+                    <img src="https://media.thechalkboardmag.com/wp-content/uploads/2015/09/30015301/ayurvedic-breathing.jpg" alt="Alternate Nostril Breathing" class="mb-2 mx-auto rounded-md h-32 object-cover">
                     <h2 class="text-gray-800 text-xl font-semibold text-center mb-1">Alternate Nostril Breathing</h2>
                     <p class="text-gray-700 text-sm text-center">This breathing technique can quickly calm the mind and body, and reduce anxiety and stress.</p>
                 </div>
     
                 <!-- Pose 4: Humming Bee Breath -->
                 <div class="bg-white p-4 rounded-lg shadow-lg transition-transform transform hover:scale-105">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhAYCUaRYxzmZdMV3J9MipZC3fzdjKVZje107177TElvXESDA2co7iBOLJI4xflizFAnw&usqp=CAU" alt="Humming Bee Breath" class="mb-2 mx-auto rounded-md h-32 object-cover">
+                    <img src="https://www.theauric.com/cdn/shop/articles/IMG_5871_1600x.jpg?v=1647445416" alt="Humming Bee Breath" class="mb-2 mx-auto rounded-md h-32 object-cover">
                     <h2 class="text-gray-800 text-xl font-semibold text-center mb-1">Humming Bee Breath</h2>
                     <p class="text-gray-700 text-sm text-center">Humming Bee Breath is effective at releasing built-up tension in the body.</p>
                 </div>
@@ -255,78 +255,72 @@
     </div>
 </div>
 <script>
-    // Function to toggle FAQ visibility
-function toggleFAQ(element) {
-    const answer = element.nextElementSibling;
-    answer.classList.toggle('hidden'); // Toggle visibility
-    const arrow = element.querySelector('.faq-arrow');
-    arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; // Change arrow direction
-}
-
-// Start breathing exercise
-document.getElementById('try-breathing-button').addEventListener('click', function() {
-    const exerciseCard = document.getElementById('exerciseCard');
-    exerciseCard.classList.remove('hidden');
-
-    let timeLeft = 120; // Total duration of the exercise in seconds
-    const timerDisplay = document.getElementById('timer');
-    const instruction = document.getElementById('instruction');
-    const breathingDuration = 4; // Seconds for inhale/exhale
-    let inhale = true;
-
-    timerDisplay.textContent = timeLeft;
-
-    // Update breathing every second
-    const countdown = setInterval(function() {
-        timeLeft--;
-        timerDisplay.textContent = timeLeft;
-
-        if (timeLeft % 8 === 0) { // Every 8 seconds (4s inhale + 4s exhale)
-            instruction.textContent = inhale ? "Inhale" : "Exhale";
-            inhale = !inhale; // Toggle inhale/exhale
-        }
-
-        if (timeLeft <= 0) {
-            clearInterval(countdown);
-            instruction.textContent = "Great job! You're done!";
-            document.getElementById('animation-circle').classList.add('hidden'); // Optionally hide circle at the end
-        }
-    }, 1000);
-});
-
-// Close breathing exercise
-document.getElementById('closeExercise').addEventListener('click', function() {
-    document.getElementById('exerciseCard').classList.add('hidden');
-    clearInterval(countdown); // Clear the interval when closing
-});
-
-// Event listener for the FAQs button
-document.getElementById('view-faqs-button').addEventListener('click', function() {
-    const faqsSection = document.getElementById('faqs'); // Get the FAQs section
+    function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        answer.classList.toggle('hidden'); 
+        const arrow = element.querySelector('.faq-arrow');
+        arrow.textContent = answer.classList.contains('hidden') ? '▼' : '▲'; 
+    }
     
-    // Scroll to the FAQs section smoothly
-    faqsSection.scrollIntoView({ behavior: 'smooth' });
-});
-// for horizontal scroll
-const carousel = document.getElementById('carousel');
-const leftButton = document.getElementById('leftButton');
-const rightButton = document.getElementById('rightButton');
-
-let scrollAmount = 0;
-
-rightButton.addEventListener('click', () => {
-    scrollAmount += carousel.clientWidth * 0.6;
-    carousel.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
+    document.getElementById('try-breathing-button').addEventListener('click', function() {
+        const exerciseCard = document.getElementById('exerciseCard');
+        exerciseCard.classList.remove('hidden');
+    
+        let timeLeft = 120; 
+        const timerDisplay = document.getElementById('timer');
+        const instruction = document.getElementById('instruction');
+        const breathingDuration = 4; 
+        let inhale = true;
+    
+        timerDisplay.textContent = timeLeft;
+    
+        const countdown = setInterval(function() {
+            timeLeft--;
+            timerDisplay.textContent = timeLeft;
+    
+            if (timeLeft % 8 === 0) { 
+                instruction.textContent = inhale ? "Inhale" : "Exhale";
+                inhale = !inhale; 
+            }
+    
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                instruction.textContent = "Great job! You're done!";
+                document.getElementById('animation-circle').classList.add('hidden'); 
+            }
+        }, 1000);
     });
-});
-
-leftButton.addEventListener('click', () => {
-    scrollAmount -= carousel.clientWidth * 0.6;
-    carousel.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
+    
+    document.getElementById('closeExercise').addEventListener('click', function() {
+        document.getElementById('exerciseCard').classList.add('hidden');
+        clearInterval(countdown); 
     });
-});
-</script>
+    
+    document.getElementById('view-faqs-button').addEventListener('click', function() {
+        const faqsSection = document.getElementById('faqs'); 
+        
+        faqsSection.scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    const carousel = document.getElementById('carousel');
+    const leftButton = document.getElementById('leftButton');
+    const rightButton = document.getElementById('rightButton');
+    
+    let scrollAmount = 0;
+    
+    rightButton.addEventListener('click', () => {
+        scrollAmount += carousel.clientWidth * 0.6;
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+    
+    leftButton.addEventListener('click', () => {
+        scrollAmount -= carousel.clientWidth * 0.6;
+        carousel.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+        });
+    });
+    </script>
